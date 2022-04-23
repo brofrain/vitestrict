@@ -12,7 +12,7 @@
       Vue 3 Composition API & Reactivity Transform / File-based routing / Layouts / APIs auto-importing
     </div>
     <div align="center">
-      Vite / SSG / PWA / i18n / UnoCSS / Iconify / Pinia / Vitest / Cypress / Netify / pnpm
+      Vite / SSG / PWA / I18n / UnoCSS / Iconify / Pinia / Vitest / Cypress / Netlify / pnpm
     </div>
   </i>
 </h6>
