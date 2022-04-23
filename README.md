@@ -22,8 +22,7 @@
 </p>
 
 <p align="center">
-  <!-- TODO: add online demo link in README.md -->
-  ☁️ <a href="#">Online Demo</a> ☁️
+  ☁️ <a href="https://vitestrict.netlify.app/">Online Demo</a> ☁️
 </p>
 
 ## 💡 About this project
@@ -103,7 +102,7 @@ pnpm format
 
 ### 🧪 Run tests with [Vitest](https://vitest.dev/)
 
-```bash
+```
 pnpm test
 
 pnpm test:run
@@ -128,6 +127,7 @@ pnpm build
 
 ```bash
 📁app
+├─ 📁cypress                      # Cypress tests
 ├─ 📁dist                         # output directory
 ├─ 📁locales                      # translation files
 ├─ 📁node_modules
@@ -235,7 +235,7 @@ Assets referenced in the source code should be stored here.\
 
 #### src/**components**/
 
-```bash
+```
 📁components
 ├─ 📁_base
 ├─ 📁&app
@@ -329,7 +329,7 @@ It is also important not to forget about including "The" prefix in components th
 
 ##### Example application structure:
 
-```bash
+```
 📁components
 ├─ 📁_base
 │  ├─ 🔻Button.vue
