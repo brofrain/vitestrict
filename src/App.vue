@@ -1,15 +1,32 @@
 <script setup lang="ts">
-// https://github.com/vueuse/head
-// you can use this to manipulate the document head in any components,
-// they will be rendered correctly in the html results with vite-ssg
+import TheCookieBanner from "./components/&app/TheCookieBanner.vue";
+
+import { useHead } from "@vueuse/head";
+
+const route = useRoute();
+
+// STARTER_DOCS: https://vuejs.org/guide/extras/reactivity-transform.html
+const routeTitle = $computed(() =>
+  isStr(route.meta.title) || isNum(route.meta.title) ? route.meta.title : null
+);
+
+// STARTER_DOCS: https://github.com/vueuse/head
 useHead({
-  title: 'Vitesse',
+  title: computed(() =>
+    routeTitle ? `ViteStrict - ${routeTitle}` : "ViteStrict"
+  ),
   meta: [
-    { name: 'description', content: 'Opinionated Vite Starter Template' },
+    { name: "description", content: "Strict Vitesse-based Starter Template" },
   ],
-})
+});
 </script>
 
 <template>
-  <RouterView />
+  <!-- STARTER_DOCS: https://router.vuejs.org/guide/advanced/transitions.html -->
+  <router-view v-slot="{ Component }">
+    <base-fade-transition appear>
+      <component :is="Component" />
+    </base-fade-transition>
+  </router-view>
+  <TheCookieBanner />
 </template>

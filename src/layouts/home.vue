@@ -1,9 +1,13 @@
+<script setup lang="ts">
+import TheFooter from "~/components/&layouts/&shared/TheFooter.vue";
+import TheVueTagInfo from "~/components/&layouts/home/TheVueTagInfo.vue";
+</script>
+
 <template>
-  <main class="px-4 py-10 text-center text-gray-700 dark:text-gray-200">
-    <RouterView />
-    <Footer />
-    <div class="mt-5 mx-auto text-center opacity-25 text-sm">
-      [Home Layout]
-    </div>
+  <main _p="x6 y10">
+    <router-view _text-center />
+    <TheFooter />
+    <TheVueTagInfo />
+    <div _op50 _text-sm _text-center>[Home Layout]</div>
   </main>
 </template>

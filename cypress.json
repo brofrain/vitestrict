@@ -1,4 +1,8 @@
 {
   "baseUrl": "http://localhost:3333",
-  "chromeWebSecurity": false
+  "chromeWebSecurity": false,
+
+  "fixturesFolder": false,
+  "pluginsFile": false,
+  "supportFile": false
 }

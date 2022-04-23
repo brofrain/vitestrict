@@ -1,12 +1,39 @@
-import NProgress from 'nprogress'
-import { type UserModule } from '~/types'
+import { useTimeoutFn } from "@vueuse/core";
+import { useNProgress } from "@vueuse/integrations/useNProgress";
+import type { PluginModule } from "~/types/modules";
 
-export const install: UserModule = ({ isClient, router }) => {
+const { start, done } = useNProgress(null, { showSpinner: false });
+
+// prevent the router from disabling nprogress, if triggered by something else
+let startedByRouter = false;
+const startByRouter = () => {
+  start();
+  startedByRouter = true;
+};
+
+const {
+  start: detachStart,
+  stop,
+  isPending,
+} = $(useTimeoutFn(startByRouter, 0, { immediate: false }));
+
+export const install: PluginModule = ({ isClient, router }) => {
   if (isClient) {
     router.beforeEach((to, from) => {
-      if (to.path !== from.path)
-        NProgress.start()
-    })
-    router.afterEach(() => { NProgress.done() })
+      if (to.path !== from.path) {
+        detachStart();
+      }
+    });
+
+    router.afterEach(() => {
+      if (isPending) {
+        stop();
+      }
+
+      if (startedByRouter) {
+        done();
+        startedByRouter = false;
+      }
+    });
   }
-}
+};

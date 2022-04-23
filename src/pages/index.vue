@@ -1,64 +1,62 @@
-<script setup lang="ts">
-import { useUserStore } from '~/stores/user'
-
-const user = useUserStore()
-const name = $ref(user.savedName)
-
-const router = useRouter()
-const go = () => {
-  if (name)
-    router.push(`/hi/${encodeURIComponent(name)}`)
-}
-
-const { t } = useI18n()
-</script>
-
-<template>
-  <div>
-    <div text-4xl>
-      <div i-carbon-campsite inline-block />
-    </div>
-    <p>
-      <a rel="noreferrer" href="https://github.com/antfu/vitesse" target="_blank">
-        Vitesse
-      </a>
-    </p>
-    <p>
-      <em text-sm opacity-75>{{ t('intro.desc') }}</em>
-    </p>
-
-    <div py-4 />
-
-    <input
-      id="input"
-      v-model="name"
-      :placeholder="t('intro.whats-your-name')"
-      :aria-label="t('intro.whats-your-name')"
-      type="text"
-      autocomplete="false"
-      p="x4 y2"
-      w="250px"
-      text="center"
-      bg="transparent"
-      border="~ rounded gray-200 dark:gray-700"
-      outline="none active:none"
-      @keydown.enter="go"
-    >
-    <label class="hidden" for="input">{{ t('intro.whats-your-name') }}</label>
-
-    <div>
-      <button
-        btn m-3 text-sm
-        :disabled="!name"
-        @click="go"
-      >
-        {{ t('button.go') }}
-      </button>
-    </div>
-  </div>
-</template>
-
 <route lang="yaml">
 meta:
   layout: home
 </route>
+
+<script setup lang="ts">
+import TheTree from "~/components/&shared/TheTree.vue";
+
+import { useNamesStore } from "~/stores/names";
+
+const { currentName } = useNamesStore();
+const router = useRouter();
+
+const name = $ref("");
+
+const pushNameRoute = () => {
+  if (name) {
+    router.push(`/hi/${encodeURIComponent(name)}`);
+  }
+};
+
+const { t } = useI18n();
+
+const inputPlaceholder = $computed(() =>
+  currentName
+    ? t("home.input_placeholder_with_name", { name: currentName })
+    : t("home.input_placeholder")
+);
+</script>
+
+<template>
+  <div>
+    <TheTree _inline-block _text-5xl _mb-1 />
+
+    <div>
+      <base-link to="https://github.com/brofrain/vitestrict" external>
+        ViteStrict
+      </base-link>
+      <p>
+        <em>
+          {{ t("home.description") }}
+        </em>
+      </p>
+    </div>
+
+    <div _py-3 />
+
+    <div>
+      <base-input
+        v-model="name"
+        :placeholder="inputPlaceholder"
+        @keydown.enter="pushNameRoute"
+      />
+    </div>
+
+    <div>
+      <base-button :disabled="!name" _m-3 @click="pushNameRoute">
+        {{ t("home.button") }}
+      </base-button>
+    </div>
+  </div>
+</template>

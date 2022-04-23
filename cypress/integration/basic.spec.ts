@@ -1,36 +1,29 @@
-context('Basic', () => {
+/// <reference types="cypress" />
+
+context("Basic", () => {
   beforeEach(() => {
-    cy.visit('/')
-  })
+    cy.visit("/");
+  });
 
-  it('basic nav', () => {
-    cy.url()
-      .should('eq', 'http://localhost:3333/')
+  it("hi", () => {
+    cy.url().should("eq", "http://localhost:3333/");
 
-    cy.contains('[Home Layout]')
-      .should('exist')
+    cy.contains("[Home Layout]").should("exist");
 
-    cy.get('#input')
-      .type('Vitesse{Enter}')
+    cy.get("input")
+      .type("Vitesse{Enter}")
       .url()
-      .should('eq', 'http://localhost:3333/hi/Vitesse')
+      .should("eq", "http://localhost:3333/hi/Vitesse");
 
-    cy.contains('[Default Layout]')
-      .should('exist')
+    cy.contains("[Default Layout]").should("exist");
 
-    cy.get('[btn]')
-      .click()
-      .url()
-      .should('eq', 'http://localhost:3333/')
-  })
+    cy.get("button").click().url().should("eq", "http://localhost:3333/");
+  });
 
-  it('markdown', () => {
+  it("about", () => {
     cy.get('[title="About"]')
       .click()
       .url()
-      .should('eq', 'http://localhost:3333/about')
-
-    cy.get('pre.language-js')
-      .should('exist')
-  })
-})
+      .should("eq", "http://localhost:3333/about");
+  });
+});

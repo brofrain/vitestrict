@@ -1,49 +1,52 @@
 <script setup lang="ts">
-import { useUserStore } from '~/stores/user'
+import { useNamesStore } from "~/stores/names";
 
-const props = defineProps<{ name: string }>()
-const router = useRouter()
-const user = useUserStore()
-const { t } = useI18n()
+const { name } = defineProps<{ name: string }>();
+
+const router = useRouter();
+
+const { otherNames, pushName } = $(useNamesStore());
+
+const canGoBack = $computed(() => !!router.options.history.state.back);
 
 watchEffect(() => {
-  user.setNewName(props.name)
-})
+  pushName(name);
+});
+
+const { t } = useI18n();
 </script>
 
 <template>
-  <div>
-    <div text-4xl>
-      <div i-carbon-pedestrian inline-block />
-    </div>
-    <p>
-      {{ t('intro.hi', { name: props.name }) }}
-    </p>
-
-    <p text-sm opacity-50>
-      <em>{{ t('intro.dynamic-route') }}</em>
-    </p>
-
-    <template v-if="user.otherNames.length">
-      <p text-sm mt-4>
-        <span opacity-75>{{ t('intro.aka') }}:</span>
-        <ul>
-          <li v-for="otherName in user.otherNames" :key="otherName">
-            <router-link :to="`/hi/${otherName}`" replace>
-              {{ otherName }}
-            </router-link>
-          </li>
-        </ul>
-      </p>
-    </template>
+  <div _text-center>
+    <div _icon-mdi-human-greeting _inline-block _text-4xl _mb-1 />
 
     <div>
-      <button
-        btn m="3 t6" text-sm
-        @click="router.back()"
-      >
-        {{ t('button.back') }}
-      </button>
+      <base-fade-transition>
+        <p :key="name">
+          {{ t("name.hi", { name }) }}
+        </p>
+      </base-fade-transition>
+
+      <p>
+        <em _text-xs _op60>{{ t("name.description") }}</em>
+      </p>
+
+      <div v-if="otherNames.length" _mt-4 _text-sm>
+        <span _op75>{{ t("name.aka") }}:</span>
+        <ul>
+          <li v-for="otherName in otherNames" :key="otherName" _block>
+            <base-link :to="`/hi/${otherName}`" replace>
+              {{ otherName }}
+            </base-link>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div _my-6>
+      <base-button :disabled="!canGoBack" _text-sm @click="router.back()">
+        {{ t("common.button.back") }}
+      </base-button>
     </div>
   </div>
 </template>

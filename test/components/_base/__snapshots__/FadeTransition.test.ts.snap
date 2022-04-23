@@ -1,0 +1,7 @@
+// Vitest Snapshot v1
+
+exports[`FadeTransition > should render 1`] = `
+"<transition-stub>
+  <div> abc </div>
+</transition-stub>"
+`;

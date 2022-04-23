@@ -1,14 +1,29 @@
+<route lang="yaml">
+meta:
+  layout: blank
+  title: 404
+</route>
+
 <script setup lang="ts">
-const { t } = useI18n()
+const { all } = defineProps<{ all: string[] }>();
+
+const router = useRouter();
+const { t } = useI18n();
 </script>
 
 <template>
-  <div>
-    {{ t('not-found') }}
+  <div _text-center>
+    <div _icon-carbon-warning _text-4xl _inline-block _mb-1 />
+
+    <div _text-lg>
+      <span _op75>{{ t("page_not_found") }}</span>
+      {{ `/${all.join("/")}` }}
+    </div>
+
+    <div _mt-5>
+      <base-button @click="router.push('/')">
+        {{ t("common.button.home") }}
+      </base-button>
+    </div>
   </div>
 </template>
-
-<route lang="yaml">
-meta:
-  layout: 404
-</route>
