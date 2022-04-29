@@ -1,6 +1,6 @@
 import {
   defineConfig,
-  presetUno,
+  presetWind,
   presetAttributify,
   presetIcons,
   presetTypography,
@@ -71,7 +71,7 @@ export default defineConfig({
   },
 
   presets: [
-    presetUno(),
+    presetWind(),
 
     // STARTER_DOCS: https://github.com/brofrain/unocss-preset-colors-with-variants
     presetBetterNestedColors(),
