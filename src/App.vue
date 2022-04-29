@@ -25,7 +25,7 @@ useHead({
   <!-- STARTER_DOCS: https://router.vuejs.org/guide/advanced/transitions.html -->
   <router-view v-slot="{ Component }">
     <base-fade-transition appear>
-      <component :is="Component" />
+      <component :is="Component" :key="route.name" />
     </base-fade-transition>
   </router-view>
   <TheCookieBanner />
