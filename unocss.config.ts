@@ -77,7 +77,7 @@ export default defineConfig({
     presetBetterNestedColors(),
 
     // STARTER_DOCS: https://github.com/unocss/unocss/tree/main/packages/preset-attributify
-    presetAttributify({ prefix: "_" /* prefixedOnly: true */ }),
+    presetAttributify({ prefix: "_", prefixedOnly: true }),
 
     // STARTER_DOCS: https://github.com/unocss/unocss/tree/main/packages/preset-icons
     presetIcons({ prefix: "icon-", scale: 1.2, warn: true }),
