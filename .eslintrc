@@ -53,14 +53,14 @@
   "plugins": ["html", "import", "n", "promise", "unicorn"],
 
   "rules": {
+    "camelcase": "off",
+    "import/no-unresolved": "off",
+    "no-undef": "off",
+    "no-console": "warn",
     "vue/component-tags-order": [
       "error",
       { "order": ["route", "script", "template", "style"] }
     ],
-
-    "camelcase": "off",
-    "import/no-unresolved": "off",
-    "no-undef": "off",
     "vue/html-self-closing": "off",
     "vue/max-attributes-per-line": "off",
     "vue/multi-word-component-names": "off",
