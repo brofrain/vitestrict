@@ -16,22 +16,22 @@ describe("_global", () => {
     });
 
     it("should request animation frame twice", () => {
-      const requestAnimationFrameSpy = vi
+      const requestAnimationFrameMock = vi
         .spyOn(window, "requestAnimationFrame")
         .mockImplementation((cb: any) => cb());
 
       forceNextTick();
 
-      expect(requestAnimationFrameSpy).toHaveBeenCalledTimes(2);
+      expect(requestAnimationFrameMock).toHaveBeenCalledTimes(2);
 
-      requestAnimationFrameSpy.mockClear();
+      requestAnimationFrameMock.mockClear();
 
       const fn = vi.fn();
 
       forceNextTick(fn);
 
       expect(fn).toHaveBeenCalledOnce();
-      expect(requestAnimationFrameSpy).toHaveBeenCalledTimes(2);
+      expect(requestAnimationFrameMock).toHaveBeenCalledTimes(2);
     });
   });
 
