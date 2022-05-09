@@ -2,6 +2,7 @@
 import TheCookieBanner from "./components/&app/TheCookieBanner.vue";
 
 import { useHead } from "@vueuse/head";
+import { isDark } from "~/composables/dark";
 
 const route = useRoute();
 
@@ -17,6 +18,10 @@ useHead({
   ),
   meta: [
     { name: "description", content: "Strict Vitesse-based Starter Template" },
+    {
+      name: "theme-color",
+      content: computed(() => (isDark.value ? "#00aba9" : "#ffffff")),
+    },
   ],
 });
 </script>
