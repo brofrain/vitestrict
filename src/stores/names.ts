@@ -4,7 +4,7 @@ export const useNamesStore = defineStore("names", () => {
   let currentName = $ref("");
   const previousNames = $ref(new Set<string>());
 
-  const usedNames = $computed(() => Array.from(previousNames).sort());
+  const usedNames = $computed(() => [...previousNames].sort());
   const otherNames = $computed(() =>
     usedNames.filter((name) => name !== currentName)
   );

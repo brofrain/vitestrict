@@ -32,6 +32,7 @@ specifiers:
   eslint-plugin-prettier: ^4.0.0
   eslint-plugin-promise: ^6.0.0
   eslint-plugin-unicorn: ^42.0.0
+  eslint-plugin-unused-imports: ^2.0.0
   eslint-plugin-vue: ^8.7.1
   eslint-plugin-vue-scoped-css: ^2.2.0
   eslint-plugin-yml: ^0.14.0
@@ -101,6 +102,7 @@ devDependencies:
   eslint-plugin-prettier: 4.0.0_iqftbjqlxzn3ny5nablrkczhqi
   eslint-plugin-promise: 6.0.0_eslint@8.15.0
   eslint-plugin-unicorn: 42.0.0_eslint@8.15.0
+  eslint-plugin-unused-imports: 2.0.0_oigbemwezw7cjyqb7ubidr4tyy
   eslint-plugin-vue: 8.7.1_eslint@8.15.0
   eslint-plugin-vue-scoped-css: 2.2.0_dryu75cpo47beunr4wxbse3hsa
   eslint-plugin-yml: 0.14.0_eslint@8.15.0
@@ -3707,6 +3709,21 @@ packages:
       strip-indent: 3.0.0
     dev: true
 
+  /eslint-plugin-unused-imports/2.0.0_oigbemwezw7cjyqb7ubidr4tyy:
+    resolution: {integrity: sha512-3APeS/tQlTrFa167ThtP0Zm0vctjr4M44HMpeg1P4bK6wItarumq0Ma82xorMKdFsWpphQBlRPzw/pxiVELX1A==}
+    engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    peerDependencies:
+      '@typescript-eslint/eslint-plugin': ^5.0.0
+      eslint: ^8.0.0
+    peerDependenciesMeta:
+      '@typescript-eslint/eslint-plugin':
+        optional: true
+    dependencies:
+      '@typescript-eslint/eslint-plugin': 5.23.0_c63nfttrfhylg3zmgcxfslaw44
+      eslint: 8.15.0
+      eslint-rule-composer: 0.3.0
+    dev: true
+
   /eslint-plugin-vue-scoped-css/2.2.0_dryu75cpo47beunr4wxbse3hsa:
     resolution: {integrity: sha512-PjjoYAm4crSZvcvRZpsJdHS8WcLc/bbodEkbLkXVpR6VlC9TGs+n7SCJZlKzili/nNwMGeJGhNdpoiySyIaVgg==}
     engines: {node: ^12.22 || ^14.17 || >=16}
@@ -3757,6 +3774,11 @@ packages:
       yaml-eslint-parser: 0.5.0
     transitivePeerDependencies:
       - supports-color
+    dev: true
+
+  /eslint-rule-composer/0.3.0:
+    resolution: {integrity: sha512-bt+Sh8CtDmn2OajxvNO+BX7Wn4CIWMpTRm3MaiKPCQcnnlm0CS2mhui6QaoeQugs+3Kj2ESKEEGJUdVafwhiCg==}
+    engines: {node: '>=4.0.0'}
     dev: true
 
   /eslint-scope/5.1.1:

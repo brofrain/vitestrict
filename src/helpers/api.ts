@@ -4,5 +4,5 @@ import axios from "axios";
 // don't forget to remove axios (pnpm rm axios), if you're not going to use it
 export const rest = axios.create({
   baseURL: import.meta.env.VITE_API_BASE_URL,
-  timeout: 10000,
+  timeout: 10_000,
 });

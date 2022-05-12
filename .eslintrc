@@ -1,9 +1,16 @@
 {
+  "root": true,
+
   "env": {
     "browser": true,
     "es2021": true,
     "es6": true,
     "node": true
+  },
+
+  "parserOptions": {
+    "ecmaVersion": 2022,
+    "sourceType": "module"
   },
 
   "extends": [
@@ -18,10 +25,66 @@
     "plugin:jsonc/recommended-with-jsonc",
     "plugin:markdown/recommended",
     "plugin:prettier/recommended",
+    "plugin:promise/recommended",
+    "plugin:unicorn/recommended",
     "plugin:vue/vue3-recommended",
     "plugin:vue-scoped-css/vue3-recommended",
-    "plugin:yml/standard"
+    "plugin:yml/standard",
+    "plugin:yml/prettier"
   ],
+
+  "plugins": ["html", "import", "n", "promise", "unicorn", "unused-imports"],
+
+  "rules": {
+    "no-console": "warn",
+    "no-debugger": "warn",
+
+    "camelcase": "off",
+
+    "unicorn/explicit-length-check": "off",
+    "unicorn/no-null": "off",
+    "unicorn/prevent-abbreviations": "off",
+
+    "vue/component-tags-order": [
+      "error",
+      { "order": ["route", "script", "template", "style"] }
+    ],
+
+    // *** FIXED ***
+    // Vue
+    "import/no-unresolved": "off",
+    "no-undef": "off",
+    "unicorn/consistent-function-scoping": "off",
+    "unicorn/filename-case": "off",
+    "vue/multi-word-component-names": "off",
+
+    // Vite
+    "@typescript-eslint/consistent-type-imports": [
+      "error",
+      { "prefer": "type-imports", "disallowTypeAnnotations": true }
+    ],
+
+    // eslint-plugin-unused-imports
+    "@typescript-eslint/no-unused-vars": "off",
+    "unused-imports/no-unused-imports": "error",
+    "unused-imports/no-unused-vars": [
+      "warn",
+      {
+        "vars": "all",
+        "varsIgnorePattern": "^_",
+        "args": "after-used",
+        "argsIgnorePattern": "^_"
+      }
+    ],
+
+    // Prettier
+    "vue/html-self-closing": "off",
+    "vue/max-attributes-per-line": "off",
+    "vue/singleline-html-element-content-newline": "off",
+
+    // Reactivity Transform
+    "vue/no-setup-props-destructure": "off"
+  },
 
   "overrides": [
     {
@@ -29,6 +92,18 @@
       "parser": "vue-eslint-parser",
       "parserOptions": {
         "parser": "@typescript-eslint/parser"
+      }
+    },
+    {
+      "files": ["*.ts"],
+      "excludedFiles": "cypress/**/*.spec.ts",
+      "parser": "@typescript-eslint/parser",
+      "parserOptions": { "project": "tsconfig.json" },
+      "rules": {
+        "@typescript-eslint/consistent-type-exports": [
+          "error",
+          { "fixMixedExportsWithInlineTypeSpecifier": true }
+        ]
       }
     },
     {
@@ -42,6 +117,7 @@
     {
       "files": ["*.test.ts"],
       "rules": {
+        "@typescript-eslint/ban-types": "off",
         "@typescript-eslint/no-empty-function": "off",
         "@typescript-eslint/no-explicit-any": "off"
       }
@@ -53,38 +129,5 @@
         "@typescript-eslint/no-explicit-any": "off"
       }
     }
-  ],
-
-  "parserOptions": {
-    "ecmaVersion": 2022,
-    "sourceType": "module"
-  },
-
-  "plugins": ["html", "import", "n", "promise", "unicorn"],
-
-  "rules": {
-    "camelcase": "off",
-    "import/no-unresolved": "off",
-    "no-undef": "off",
-    "no-console": "warn",
-    "vue/component-tags-order": [
-      "error",
-      { "order": ["route", "script", "template", "style"] }
-    ],
-    "vue/html-self-closing": "off",
-    "vue/max-attributes-per-line": "off",
-    "vue/multi-word-component-names": "off",
-    "vue/singleline-html-element-content-newline": "off",
-
-    // STARTER_DOCS:
-    // type-only imports and exports are recommended
-    // https://vitejs.dev/guide/features.html#typescript
-    "@typescript-eslint/consistent-type-imports": [
-      "error",
-      { "prefer": "type-imports", "disallowTypeAnnotations": true }
-    ],
-
-    // reactivity transform
-    "vue/no-setup-props-destructure": "off"
-  }
+  ]
 }
