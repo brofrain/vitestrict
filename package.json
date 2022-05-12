@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "vite --port 3333",
+    "preview": "vite preview",
     "build": "vite build",
     "tsc": "vue-tsc --noEmit",
     "lint": "eslint **/*.{vue,ts} --ignore-pattern dist/ --ignore-pattern **/__vite*",
@@ -11,7 +12,9 @@
     "test": "vitest",
     "test:run": "vitest run",
     "test:coverage": "vitest run --coverage",
-    "test:e2e": "cypress open"
+    "test:e2e": "cypress open",
+    "review": "pnpm tsc && pnpm lint && pnpm test:run",
+    "prod": "pnpm review && pnpm build"
   },
   "dependencies": {
     "@vueuse/core": "^8.4.2",
