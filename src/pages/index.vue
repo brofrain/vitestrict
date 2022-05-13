@@ -4,14 +4,14 @@ meta:
 </route>
 
 <script setup lang="ts">
-import TheTree from "~/components/&shared/TheTree.vue";
+import TheTree from '~/components/&shared/TheTree.vue';
 
-import { useNamesStore } from "~/stores/names";
+import { useNamesStore } from '~/stores/names';
 
 const { currentName } = useNamesStore();
 const router = useRouter();
 
-const name = $ref("");
+const name = $ref('');
 
 const pushNameRoute = () => {
   if (name) {
@@ -23,8 +23,8 @@ const { t } = useI18n();
 
 const inputPlaceholder = $computed(() =>
   currentName
-    ? t("home.input_placeholder_with_name", { name: currentName })
-    : t("home.input_placeholder")
+    ? t('home.input_placeholder_with_name', { name: currentName })
+    : t('home.input_placeholder')
 );
 </script>
 
@@ -38,7 +38,7 @@ const inputPlaceholder = $computed(() =>
       </base-link>
       <p>
         <em>
-          {{ t("home.description") }}
+          {{ t('home.description') }}
         </em>
       </p>
     </div>
@@ -55,7 +55,7 @@ const inputPlaceholder = $computed(() =>
 
     <div>
       <base-button :disabled="!name" _m-3 @click="pushNameRoute">
-        {{ t("home.button") }}
+        {{ t('home.button') }}
       </base-button>
     </div>
   </div>

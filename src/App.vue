@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import TheCookieBanner from "./components/&app/TheCookieBanner.vue";
+import TheCookieBanner from './components/&app/TheCookieBanner.vue';
 
-import { useHead } from "@vueuse/head";
-import { isDark } from "~/composables/dark";
+import { useHead } from '@vueuse/head';
+import { isDark } from '~/composables/dark';
 
 const route = useRoute();
 
@@ -14,13 +14,13 @@ const routeTitle = $computed(() =>
 // STARTER_DOCS: https://github.com/vueuse/head
 useHead({
   title: computed(() =>
-    routeTitle ? `ViteStrict - ${routeTitle}` : "ViteStrict"
+    routeTitle ? `ViteStrict - ${routeTitle}` : 'ViteStrict'
   ),
   meta: [
-    { name: "description", content: "Strict Vitesse-based Starter Template" },
+    { name: 'description', content: 'Strict Vitesse-based Starter Template' },
     {
-      name: "theme-color",
-      content: computed(() => (isDark.value ? "#00aba9" : "#ffffff")),
+      name: 'theme-color',
+      content: computed(() => (isDark.value ? '#00aba9' : '#ffffff')),
     },
   ],
 });

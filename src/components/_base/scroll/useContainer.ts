@@ -1,5 +1,5 @@
-import { useMutationObserver, useResizeObserver } from "@vueuse/core";
-import type { Ref } from "vue";
+import { useMutationObserver, useResizeObserver } from '@vueuse/core';
+import type { Ref } from 'vue';
 
 interface Options {
   scrollEl: Ref<HTMLDivElement>;
@@ -10,10 +10,10 @@ export default (options: Options) => {
 
   const containerEl = $ref<HTMLDivElement>();
 
-  let containerMargin = $ref("0");
-  let wrapperPadding = $ref("0");
-  let containerWidth = $ref("100%");
-  let containerHeight = $ref("100%");
+  let containerMargin = $ref('0');
+  let wrapperPadding = $ref('0');
+  let containerWidth = $ref('100%');
+  let containerHeight = $ref('100%');
 
   const inheritParentPadding = () => {
     if (!containerEl?.parentElement) {
@@ -38,8 +38,8 @@ export default (options: Options) => {
       paddingLeft,
     ];
 
-    containerMargin = containerMarginArr.join(" ");
-    wrapperPadding = wrapperPaddingArr.join(" ");
+    containerMargin = containerMarginArr.join(' ');
+    wrapperPadding = wrapperPaddingArr.join(' ');
 
     containerWidth = `calc(100% + ${paddingRight} + ${paddingLeft})`;
     containerHeight = `calc(100% + ${paddingTop} + ${paddingBottom})`;

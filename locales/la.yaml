@@ -29,7 +29,7 @@ name:
   description: Demo de dynamic pagina
   aka: Qui et
 
-page_not_found: "Pagina non inveni:"
+page_not_found: 'Pagina non inveni:'
 
 common:
   button:

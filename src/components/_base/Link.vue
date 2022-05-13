@@ -15,7 +15,7 @@ const handleClick = () => {
   }
 
   if (external) {
-    window.open(to, "_blank")?.focus();
+    window.open(to, '_blank')?.focus();
   } else if (replace) {
     router.replace(to);
   } else {

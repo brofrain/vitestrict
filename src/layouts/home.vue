@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import TheFooter from "~/components/&layouts/&shared/TheFooter.vue";
-import TheVueTagInfo from "~/components/&layouts/home/TheVueTagInfo.vue";
+import TheFooter from '~/components/&layouts/&shared/TheFooter.vue';
+import TheVueTagInfo from '~/components/&layouts/home/TheVueTagInfo.vue';
 </script>
 
 <template>

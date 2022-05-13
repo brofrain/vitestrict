@@ -1,4 +1,4 @@
-import { rest } from "~/helpers/api";
+import { rest } from '~/helpers/api';
 
 interface Realease {
   tag_name: string;
@@ -7,7 +7,7 @@ interface Realease {
 export const fetchLatestViteTag = async () => {
   const {
     data: { tag_name },
-  } = await rest.get<Realease>("/repos/vitejs/vite/releases/latest");
+  } = await rest.get<Realease>('/repos/vitejs/vite/releases/latest');
 
   return tag_name;
 };
@@ -15,7 +15,7 @@ export const fetchLatestViteTag = async () => {
 export const fetchLatestVueTag = async () => {
   const {
     data: { tag_name },
-  } = await rest.get<Realease>("/repos/vuejs/core/releases/latest");
+  } = await rest.get<Realease>('/repos/vuejs/core/releases/latest');
 
   return tag_name;
 };

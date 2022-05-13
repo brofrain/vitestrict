@@ -29,7 +29,7 @@ name:
   description: Demo of dynamic route
   aka: Also known as
 
-page_not_found: "Page not found:"
+page_not_found: 'Page not found:'
 
 common:
   button:

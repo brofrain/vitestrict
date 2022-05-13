@@ -1,17 +1,17 @@
-import { defineConfig } from "vite";
-import generateSitemap from "vite-ssg-sitemap";
-import Vue from "@vitejs/plugin-vue";
-import AutoImport from "unplugin-auto-import/vite";
-import Components from "unplugin-vue-components/vite";
-import type { ComponentResolver } from "unplugin-vue-components/types";
-import Pages, { type ImportModeResolver } from "vite-plugin-pages";
-import Layouts from "vite-plugin-vue-layouts";
-import VueI18n from "@intlify/vite-plugin-vue-i18n";
-import Unocss from "unocss/vite";
-import { VitePWA } from "vite-plugin-pwa";
-import Eslint from "@nabla/vite-plugin-eslint";
-import Inspect from "vite-plugin-inspect";
-import * as globalHelpers from "./src/helpers/_global";
+import { defineConfig } from 'vite';
+import generateSitemap from 'vite-ssg-sitemap';
+import Vue from '@vitejs/plugin-vue';
+import AutoImport from 'unplugin-auto-import/vite';
+import Components from 'unplugin-vue-components/vite';
+import type { ComponentResolver } from 'unplugin-vue-components/types';
+import Pages, { type ImportModeResolver } from 'vite-plugin-pages';
+import Layouts from 'vite-plugin-vue-layouts';
+import VueI18n from '@intlify/vite-plugin-vue-i18n';
+import Unocss from 'unocss/vite';
+import { VitePWA } from 'vite-plugin-pwa';
+import Eslint from '@nabla/vite-plugin-eslint';
+import Inspect from 'vite-plugin-inspect';
+import * as globalHelpers from './src/helpers/_global';
 
 const GlobalHelpersImport = (options: { importPath: string }) => ({
   [options.importPath]: Object.keys(globalHelpers),
@@ -21,11 +21,11 @@ const BaseComponentsResolver = (options: {
   importDir: string;
   prefix?: string;
 }): ComponentResolver => {
-  options.importDir = options.importDir.replace(/\/$/, "");
+  options.importDir = options.importDir.replace(/\/$/, '');
 
-  const pascalCasePrefix = (options.prefix || "")
+  const pascalCasePrefix = (options.prefix || '')
     .replace(/\w+/g, (match) => match[0].toUpperCase() + match.slice(1))
-    .replace(/-|\s/g, "");
+    .replace(/-|\s/g, '');
 
   return (name: string) =>
     name.startsWith(pascalCasePrefix)
@@ -38,10 +38,10 @@ const PagesImportModeResolver =
   (filepath, { dirs }) => {
     // top level index.vue: `sync`, others: `async`
     for (const { baseRoute, dir } of dirs) {
-      if (baseRoute === "" && filepath.startsWith(`/${dir}/index`))
-        return "sync";
+      if (baseRoute === '' && filepath.startsWith(`/${dir}/index`))
+        return 'sync';
     }
-    return "async";
+    return 'async';
   };
 
 const cwd = process.cwd();
@@ -49,8 +49,8 @@ const cwd = process.cwd();
 export default defineConfig(({ mode }) => ({
   resolve: {
     alias: {
-      "~/": `${cwd}/src/`,
-      "vue-i18n": "vue-i18n/dist/vue-i18n.cjs.js",
+      '~/': `${cwd}/src/`,
+      'vue-i18n': 'vue-i18n/dist/vue-i18n.cjs.js',
     },
   },
 
@@ -63,13 +63,13 @@ export default defineConfig(({ mode }) => ({
     // STARTER_DOCS: https://github.com/antfu/unplugin-auto-import
     AutoImport({
       imports: [
-        "vue",
-        "vue/macros",
-        "vue-router",
-        "vue-i18n",
-        GlobalHelpersImport({ importPath: "~/helpers/_global" }),
+        'vue',
+        'vue/macros',
+        'vue-router',
+        'vue-i18n',
+        GlobalHelpersImport({ importPath: '~/helpers/_global' }),
       ],
-      dts: "src/__vite_auto-imports.d.ts",
+      dts: 'src/__vite_auto-imports.d.ts',
     }),
 
     // STARTER_DOCS: https://github.com/antfu/unplugin-vue-components
@@ -77,21 +77,21 @@ export default defineConfig(({ mode }) => ({
       dirs: [],
       resolvers: [
         BaseComponentsResolver({
-          importDir: "~/components/_base",
-          prefix: "base",
+          importDir: '~/components/_base',
+          prefix: 'base',
         }),
       ],
       // prevent tests from breaking the declaration file
-      dts: mode !== "test" ? "src/__vite_components.d.ts" : false,
+      dts: mode !== 'test' ? 'src/__vite_components.d.ts' : false,
     }),
 
     // STARTER_DOCS: https://github.com/hannoeru/vite-plugin-pages
     Pages({
-      importMode: mode === "production" ? PagesImportModeResolver() : "sync",
+      importMode: mode === 'production' ? PagesImportModeResolver() : 'sync',
     }),
 
     // STARTER_DOCS: https://github.com/JohnCampionJr/vite-plugin-vue-layouts
-    Layouts({ defaultLayout: "_default" }),
+    Layouts({ defaultLayout: '_default' }),
 
     // STARTER_DOCS: https://github.com/intlify/bundle-tools/tree/main/packages/vite-plugin-vue-i18n
     VueI18n({
@@ -105,28 +105,28 @@ export default defineConfig(({ mode }) => ({
 
     // STARTER_DOCS: https://github.com/antfu/vite-plugin-pwa
     VitePWA({
-      registerType: "autoUpdate",
-      includeAssets: ["favicon.svg", "safari-pinned-tab.svg"],
+      registerType: 'autoUpdate',
+      includeAssets: ['favicon.svg', 'safari-pinned-tab.svg'],
       manifest: {
-        name: "ViteStrict",
-        short_name: "ViteStrict",
-        theme_color: "#ffffff",
+        name: 'ViteStrict',
+        short_name: 'ViteStrict',
+        theme_color: '#ffffff',
         icons: [
           {
-            src: "/pwa-192x192.png",
-            sizes: "192x192",
-            type: "image/png",
+            src: '/pwa-192x192.png',
+            sizes: '192x192',
+            type: 'image/png',
           },
           {
-            src: "/pwa-512x512.png",
-            sizes: "512x512",
-            type: "image/png",
+            src: '/pwa-512x512.png',
+            sizes: '512x512',
+            type: 'image/png',
           },
           {
-            src: "/pwa-512x512.png",
-            sizes: "512x512",
-            type: "image/png",
-            purpose: "any maskable",
+            src: '/pwa-512x512.png',
+            sizes: '512x512',
+            type: 'image/png',
+            purpose: 'any maskable',
           },
         ],
       },
@@ -142,20 +142,20 @@ export default defineConfig(({ mode }) => ({
 
   // STARTER_DOCS: https://github.com/antfu/vite-ssg
   ssgOptions: {
-    script: "async",
-    formatting: "minify",
+    script: 'async',
+    formatting: 'minify',
     onFinished: generateSitemap,
   },
 
   // STARTER_DOCS: https://vitest.dev/
   test: {
     globals: true,
-    include: ["test/**/*.test.ts"],
-    environment: "jsdom",
-    deps: { inline: ["@vue", "@vueuse", "vue-demi"] },
+    include: ['test/**/*.test.ts'],
+    environment: 'jsdom',
+    deps: { inline: ['@vue', '@vueuse', 'vue-demi'] },
     coverage: {
-      include: ["src/**/*.{ts,vue}"],
-      exclude: ["src/main.ts", "src/modules", "src/types", "**/*.d.ts"],
+      include: ['src/**/*.{ts,vue}'],
+      exclude: ['src/main.ts', 'src/modules', 'src/types', '**/*.d.ts'],
       all: true,
     },
   },

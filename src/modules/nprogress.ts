@@ -1,6 +1,6 @@
-import { useTimeoutFn } from "@vueuse/core";
-import { useNProgress } from "@vueuse/integrations/useNProgress";
-import type { PluginModule } from "~/types/modules";
+import { useTimeoutFn } from '@vueuse/core';
+import { useNProgress } from '@vueuse/integrations/useNProgress';
+import type { PluginModule } from '~/types/modules';
 
 const { start, done } = useNProgress(null, { showSpinner: false });
 

@@ -16,13 +16,13 @@ const { t } = useI18n();
     <div _icon-carbon-warning _text-4xl _inline-block _mb-1 />
 
     <div _text-lg>
-      <span _op75>{{ t("page_not_found") }}</span>
-      {{ `/${all.join("/")}` }}
+      <span _op75>{{ t('page_not_found') }}</span>
+      {{ `/${all.join('/')}` }}
     </div>
 
     <div _mt-5>
       <base-button @click="router.push('/')">
-        {{ t("common.button.home") }}
+        {{ t('common.button.home') }}
       </base-button>
     </div>
   </div>

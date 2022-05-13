@@ -1,5 +1,5 @@
 <script setup lang="ts">
-type InputType = "number" | "text";
+type InputType = 'number' | 'text';
 
 type InputEvent = Event & { target: { value: string } };
 
@@ -10,19 +10,19 @@ interface Props {
 }
 
 interface Emits {
-  (e: "update:modelValue", value: string): void;
+  (e: 'update:modelValue', value: string): void;
 }
 
 const {
-  type = "text",
-  placeholder = "",
-  modelValue = "",
+  type = 'text',
+  placeholder = '',
+  modelValue = '',
 } = defineProps<Props>();
 
 const emit = defineEmits<Emits>();
 
 const handleInput = (e: Event) => {
-  emit("update:modelValue", (e as InputEvent).target.value);
+  emit('update:modelValue', (e as InputEvent).target.value);
 };
 </script>
 

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useNamesStore } from "~/stores/names";
+import { useNamesStore } from '~/stores/names';
 
 const { name } = defineProps<{ name: string }>();
 
@@ -23,16 +23,16 @@ const { t } = useI18n();
     <div>
       <base-fade-transition>
         <p :key="name">
-          {{ t("name.hi", { name }) }}
+          {{ t('name.hi', { name }) }}
         </p>
       </base-fade-transition>
 
       <p>
-        <em _text-xs _op60>{{ t("name.description") }}</em>
+        <em _text-xs _op60>{{ t('name.description') }}</em>
       </p>
 
       <div v-if="otherNames.length" _mt-4 _text-sm>
-        <span _op75>{{ t("name.aka") }}:</span>
+        <span _op75>{{ t('name.aka') }}:</span>
         <ul>
           <li v-for="otherName in otherNames" :key="otherName" _block>
             <base-link :to="`/hi/${otherName}`" replace>
@@ -45,7 +45,7 @@ const { t } = useI18n();
 
     <div _my-6>
       <base-button :disabled="!canGoBack" _text-sm @click="router.back()">
-        {{ t("common.button.back") }}
+        {{ t('common.button.back') }}
       </base-button>
     </div>
   </div>

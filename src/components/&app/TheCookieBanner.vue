@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { useLocalStorage } from "@vueuse/core";
+import { useLocalStorage } from '@vueuse/core';
 
-const cookiesAccepted = useLocalStorage("cookies-accepted", false);
+const cookiesAccepted = useLocalStorage('cookies-accepted', false);
 
 const { t } = useI18n();
 </script>
@@ -20,11 +20,11 @@ const { t } = useI18n();
       _text-center
       _select-none
     >
-      {{ t("cookie_bar.hi") }}!
+      {{ t('cookie_bar.hi') }}!
       <span _underline _cursor-pointer @click="cookiesAccepted = true">
-        {{ t("cookie_bar.accept") }}
+        {{ t('cookie_bar.accept') }}
       </span>
-      {{ t("cookie_bar.cookies") }}
+      {{ t('cookie_bar.cookies') }}
     </div>
   </base-fade-transition>
 </template>

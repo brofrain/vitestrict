@@ -1,5 +1,5 @@
-import { watchDebounced } from "@vueuse/core";
-import type { Ref } from "vue";
+import { watchDebounced } from '@vueuse/core';
+import type { Ref } from 'vue';
 
 interface Options {
   modelValue: Ref<number | undefined>;
@@ -7,7 +7,7 @@ interface Options {
   wrapperEl: Ref<HTMLDivElement>;
 }
 
-type EmitFn = (event: "update:modelValue", value: number) => void;
+type EmitFn = (event: 'update:modelValue', value: number) => void;
 
 export default (options: Options, emit: EmitFn) => {
   const { modelValue = 0, wrapperScrollTopPx, wrapperEl } = $(options);
@@ -16,7 +16,7 @@ export default (options: Options, emit: EmitFn) => {
     $$(wrapperScrollTopPx),
     (v) => {
       if (v !== modelValue) {
-        emit("update:modelValue", v);
+        emit('update:modelValue', v);
       }
     },
     { debounce: 200 }
@@ -24,7 +24,7 @@ export default (options: Options, emit: EmitFn) => {
 
   watch($$(modelValue), (v) => {
     if (isNum(v) && v !== wrapperScrollTopPx) {
-      wrapperEl.scroll({ top: v, behavior: "smooth" });
+      wrapperEl.scroll({ top: v, behavior: 'smooth' });
     }
   });
 

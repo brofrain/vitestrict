@@ -1,6 +1,6 @@
-import type { ParamlessVoidFunction } from "~/types/basic";
+import type { ParamlessVoidFunction } from '~/types/basic';
 
-export * from "./is";
+export * from './is';
 
 export const cloneDeep = <T>(value: T): T => {
   if (isArray(value)) {

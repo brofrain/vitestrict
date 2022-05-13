@@ -1,4 +1,4 @@
-import type { Ref } from "vue";
+import type { Ref } from 'vue';
 
 interface Options {
   wrapperEl: Ref<HTMLDivElement>;
@@ -33,7 +33,7 @@ export default (options: Options) => {
     });
   };
 
-  const bodyEl = $ref(document.querySelector("body") as HTMLBodyElement);
+  const bodyEl = $ref(document.querySelector('body') as HTMLBodyElement);
 
   const startMouseScroll = ({ clientY }: MouseEvent) => {
     if (!isWrapperElReady || isMouseScrollActive) {
@@ -42,17 +42,17 @@ export default (options: Options) => {
 
     beforeMouseScroll = { clickY: clientY, wrapperScrollTopPx };
 
-    window.addEventListener("mousemove", scrollByMouse);
-    window.addEventListener("mouseup", endMouseScroll);
-    bodyEl.addEventListener("mouseleave", endMouseScroll);
+    window.addEventListener('mousemove', scrollByMouse);
+    window.addEventListener('mouseup', endMouseScroll);
+    bodyEl.addEventListener('mouseleave', endMouseScroll);
   };
 
   const endMouseScroll = () => {
     beforeMouseScroll = null;
 
-    window.removeEventListener("mousemove", scrollByMouse);
-    window.removeEventListener("mouseup", endMouseScroll);
-    bodyEl.removeEventListener("mouseleave", endMouseScroll);
+    window.removeEventListener('mousemove', scrollByMouse);
+    window.removeEventListener('mouseup', endMouseScroll);
+    bodyEl.removeEventListener('mouseleave', endMouseScroll);
   };
 
   onUnmounted(endMouseScroll);

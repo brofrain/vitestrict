@@ -1,4 +1,4 @@
-import type { Ref } from "vue";
+import type { Ref } from 'vue';
 
 interface Options {
   wrapperEl: Ref<HTMLDivElement>;
@@ -36,7 +36,7 @@ export default (options: Options) => {
       scrollInterval = null;
     }
 
-    window.removeEventListener("mouseup", endTrackScroll);
+    window.removeEventListener('mouseup', endTrackScroll);
   };
 
   const startTrackScroll = ({ offsetY }: MouseEvent) => {
@@ -62,7 +62,7 @@ export default (options: Options) => {
       wrapperEl.scroll({ top });
     }, 10);
 
-    window.addEventListener("mouseup", endTrackScroll);
+    window.addEventListener('mouseup', endTrackScroll);
   };
 
   onUnmounted(endTrackScroll);

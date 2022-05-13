@@ -1,14 +1,14 @@
-import { ViteSSG } from "vite-ssg";
-import devalue from "@nuxt/devalue";
+import { ViteSSG } from 'vite-ssg';
+import devalue from '@nuxt/devalue';
 
-import generatedRoutes from "virtual:generated-pages";
-import { setupLayouts } from "virtual:generated-layouts";
+import generatedRoutes from 'virtual:generated-pages';
+import { setupLayouts } from 'virtual:generated-layouts';
 
-import App from "./App.vue";
+import App from './App.vue';
 
-import "@unocss/reset/tailwind.css";
-import "./styles/main.scss";
-import "uno.css";
+import '@unocss/reset/tailwind.css';
+import './styles/main.scss';
+import 'uno.css';
 
 const routes = setupLayouts(generatedRoutes);
 
@@ -18,7 +18,7 @@ export const createApp = ViteSSG(
   { routes, base: import.meta.env.BASE_URL },
   (ctx) => {
     // install all modules under `modules/`
-    const modules = Object.values(import.meta.globEager("./modules/*.ts"));
+    const modules = Object.values(import.meta.globEager('./modules/*.ts'));
     for (const module of modules) {
       module.install?.(ctx);
     }

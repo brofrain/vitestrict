@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from 'axios';
 
 // STARTER_DOCS: https://github.com/axios/axios
 // don't forget to remove axios (pnpm rm axios), if you're not going to use it

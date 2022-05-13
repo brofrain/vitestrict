@@ -1,7 +1,7 @@
-import { acceptHMRUpdate, defineStore } from "pinia";
+import { acceptHMRUpdate, defineStore } from 'pinia';
 
-export const useNamesStore = defineStore("names", () => {
-  let currentName = $ref("");
+export const useNamesStore = defineStore('names', () => {
+  let currentName = $ref('');
   const previousNames = $ref(new Set<string>());
 
   const usedNames = $computed(() => [...previousNames].sort());

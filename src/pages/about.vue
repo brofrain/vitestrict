@@ -4,8 +4,8 @@ meta:
 </route>
 
 <script setup lang="ts">
-import TheTree from "~/components/&shared/TheTree.vue";
-import Section from "~/components/about/Section.vue";
+import TheTree from '~/components/&shared/TheTree.vue';
+import Section from '~/components/about/Section.vue';
 
 const BASE_PARAGRAPH_COUNT = 3;
 
@@ -25,7 +25,7 @@ const { t } = useI18n();
   <div>
     <div _text-center _mb-3>
       <TheTree _inline-block _text-4xl />
-      <p _text-2xl _fw600>{{ t("about.title") }}</p>
+      <p _text-2xl _fw600>{{ t('about.title') }}</p>
     </div>
 
     <div _flex _flex-col _items-center _gap-3 _mb-5>
@@ -82,10 +82,10 @@ const { t } = useI18n();
       </Section>
       <div _flex="~ col md:row" _flex-wrap _justify-center _gap-2>
         <base-button @click="paragraphCount++">
-          {{ t("about.add_paragraph") }}
+          {{ t('about.add_paragraph') }}
         </base-button>
         <base-button @click="paragraphCount--">
-          {{ t("about.remove_paragraph") }}
+          {{ t('about.remove_paragraph') }}
         </base-button>
       </div>
     </div>

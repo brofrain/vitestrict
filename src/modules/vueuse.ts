@@ -1,5 +1,5 @@
-import { useDark } from "@vueuse/core";
-import type { PluginModule } from "~/types/modules";
+import { useDark } from '@vueuse/core';
+import type { PluginModule } from '~/types/modules';
 
 // STARTER_DOCS:
 // Set dark theme on start up
