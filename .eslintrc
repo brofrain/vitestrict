@@ -1,15 +1,24 @@
 {
   "root": true,
 
+  "ignorePatterns": [
+    "coverage",
+    "dist",
+    "node_modules",
+    "public",
+    "pnpm-lock.yaml",
+    "**/__vite*"
+  ],
+
   "env": {
     "browser": true,
-    "es2021": true,
+    "es2022": true,
     "es6": true,
     "node": true
   },
 
   "parserOptions": {
-    "ecmaVersion": 2022,
+    "ecmaVersion": "latest",
     "sourceType": "module"
   },
 
@@ -41,6 +50,8 @@
 
     "camelcase": "off",
 
+    "promise/prefer-await-to-then": "error",
+
     "unicorn/explicit-length-check": "off",
     "unicorn/no-null": "off",
     "unicorn/prevent-abbreviations": "off",
@@ -50,21 +61,30 @@
       { "order": ["route", "script", "template", "style"] }
     ],
 
-    // *** FIXED ***
-    // Vue
+    // The code below is necessary for some deps to work properly.
+    // Therefore, it is not recommended to modify it.
+    // - Vue
     "import/no-unresolved": "off",
     "no-undef": "off",
     "unicorn/consistent-function-scoping": "off",
     "unicorn/filename-case": "off",
     "vue/multi-word-component-names": "off",
 
-    // Vite
+    // - Vue (Reactivity Transform)
+    "vue/no-setup-props-destructure": "off",
+
+    // - Vite
     "@typescript-eslint/consistent-type-imports": [
       "error",
       { "prefer": "type-imports", "disallowTypeAnnotations": true }
     ],
 
-    // eslint-plugin-unused-imports
+    // - Prettier
+    "vue/html-self-closing": "off",
+    "vue/max-attributes-per-line": "off",
+    "vue/singleline-html-element-content-newline": "off",
+
+    // - eslint-plugin-unused-imports
     "@typescript-eslint/no-unused-vars": "off",
     "unused-imports/no-unused-imports": "error",
     "unused-imports/no-unused-vars": [
@@ -75,15 +95,7 @@
         "args": "after-used",
         "argsIgnorePattern": "^_"
       }
-    ],
-
-    // Prettier
-    "vue/html-self-closing": "off",
-    "vue/max-attributes-per-line": "off",
-    "vue/singleline-html-element-content-newline": "off",
-
-    // Reactivity Transform
-    "vue/no-setup-props-destructure": "off"
+    ]
   },
 
   "overrides": [
