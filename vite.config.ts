@@ -152,6 +152,11 @@ export default defineConfig(({ mode }) => ({
     globals: true,
     include: ["test/**/*.test.ts"],
     environment: "jsdom",
-    deps: { inline: ["@vue", "@vueuse"] },
+    deps: { inline: ["@vue", "@vueuse", "vue-demi"] },
+    coverage: {
+      include: ["src/**/*.{ts,vue}"],
+      exclude: ["src/main.ts", "src/modules", "src/types", "**/*.d.ts"],
+      all: true,
+    },
   },
 }));
