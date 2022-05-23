@@ -1,5 +1,6 @@
-import { mount } from '@vue/test-utils';
 import FadeTransition from '~/components/_base/FadeTransition.vue';
+
+import { mount } from '@vue/test-utils';
 
 describe('FadeTransition', () => {
   it('should render', () => {

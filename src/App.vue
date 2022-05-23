@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import TheCookieBanner from './components/&app/TheCookieBanner.vue';
+import TheCookieBanner from '~/components/&app/TheCookieBanner.vue';
 
 import { useHead } from '@vueuse/head';
+
 import { isDark } from '~/composables/dark';
 
 const route = useRoute();

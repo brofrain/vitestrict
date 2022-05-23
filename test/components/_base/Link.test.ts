@@ -1,5 +1,6 @@
-import { mount } from '@vue/test-utils';
 import Link from '~/components/_base/Link.vue';
+
+import { mount } from '@vue/test-utils';
 
 const push = vi.fn();
 const replace = vi.fn();

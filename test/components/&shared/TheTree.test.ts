@@ -1,5 +1,6 @@
-import { mount } from '@vue/test-utils';
 import TheTree from '~/components/&shared/TheTree.vue';
+
+import { mount } from '@vue/test-utils';
 
 describe('TheTree', () => {
   it('should render', () => {

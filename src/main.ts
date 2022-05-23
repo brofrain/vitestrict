@@ -1,10 +1,9 @@
-import { ViteSSG } from 'vite-ssg';
-import devalue from '@nuxt/devalue';
-
-import generatedRoutes from 'virtual:generated-pages';
-import { setupLayouts } from 'virtual:generated-layouts';
-
 import App from './App.vue';
+
+import devalue from '@nuxt/devalue';
+import { setupLayouts } from 'virtual:generated-layouts';
+import generatedRoutes from 'virtual:generated-pages';
+import { ViteSSG } from 'vite-ssg';
 
 import '@unocss/reset/tailwind.css';
 import './styles/main.scss';

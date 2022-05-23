@@ -1,17 +1,19 @@
-import { defineConfig } from 'vite';
-import generateSitemap from 'vite-ssg-sitemap';
+import VueI18n from '@intlify/vite-plugin-vue-i18n';
+import Eslint from '@nabla/vite-plugin-eslint';
 import Vue from '@vitejs/plugin-vue';
+import Unocss from 'unocss/vite';
 import AutoImport from 'unplugin-auto-import/vite';
 import Components from 'unplugin-vue-components/vite';
-import type { ComponentResolver } from 'unplugin-vue-components/types';
-import Pages, { type ImportModeResolver } from 'vite-plugin-pages';
-import Layouts from 'vite-plugin-vue-layouts';
-import VueI18n from '@intlify/vite-plugin-vue-i18n';
-import Unocss from 'unocss/vite';
-import { VitePWA } from 'vite-plugin-pwa';
-import Eslint from '@nabla/vite-plugin-eslint';
+import { defineConfig } from 'vite';
 import Inspect from 'vite-plugin-inspect';
+import Pages, { type ImportModeResolver } from 'vite-plugin-pages';
+import { VitePWA } from 'vite-plugin-pwa';
+import Layouts from 'vite-plugin-vue-layouts';
+import generateSitemap from 'vite-ssg-sitemap';
+
 import * as globalHelpers from './src/helpers/_global';
+
+import type { ComponentResolver } from 'unplugin-vue-components/types';
 
 const GlobalHelpersImport = (options: { importPath: string }) => ({
   [options.importPath]: Object.keys(globalHelpers),

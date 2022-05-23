@@ -1,4 +1,5 @@
 import { useMutationObserver, useResizeObserver } from '@vueuse/core';
+
 import type { Ref } from 'vue';
 
 interface Options {

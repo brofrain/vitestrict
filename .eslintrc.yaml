@@ -51,6 +51,48 @@ rules:
 
   'camelcase': off
 
+  'import/order':
+    - error
+    - groups:
+        - builtin
+        - external
+        - sibling
+        - index
+        - internal
+        - type
+      pathGroups:
+        # assets
+        - group: builtin
+          pattern: '~/assets/**'
+          position: before
+        # components
+        - group: builtin
+          pattern: '**/*.vue'
+          position: before
+        - group: builtin
+          pattern: './**/*.vue'
+          position: before
+        # stores
+        - group: external
+          pattern: '~/stores/**'
+          position: after
+        # composables
+        - group: external
+          pattern: '~/composables/**'
+          position: after
+        # api
+        - group: external
+          pattern: '~/api/**'
+          position: after
+        # helpers
+        - group: external
+          pattern: '~/helpers/**'
+          position: after
+      alphabetize:
+        order: asc
+        caseInsensitive: false
+      newlines-between: always
+
   'promise/prefer-await-to-then': error
 
   'unicorn/explicit-length-check': off
@@ -84,6 +126,7 @@ rules:
       disallowTypeAnnotations: true
 
   # - Prettier
+  'prettier/prettier': warn
   'vue/html-self-closing': off
   'vue/max-attributes-per-line': off
   'vue/singleline-html-element-content-newline': off

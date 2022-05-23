@@ -1,4 +1,5 @@
 import { createI18n } from 'vue-i18n';
+
 import type { PluginModule } from '~/types/modules';
 
 // STARTER_DOCS:

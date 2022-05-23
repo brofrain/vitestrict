@@ -1,4 +1,5 @@
 import { createPinia } from 'pinia';
+
 import type { PluginModule } from '~/types/modules';
 
 // STARTER_DOCS:
