@@ -1,4 +1,3 @@
-import { useTimeoutFn } from '@vueuse/core';
 import { useNProgress } from '@vueuse/integrations/useNProgress';
 
 import type { PluginModule } from '~/types/modules';

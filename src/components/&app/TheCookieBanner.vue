@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { useLocalStorage } from '@vueuse/core';
-
 const cookiesAccepted = useLocalStorage('cookies-accepted', false);
 
 const { t } = useI18n();

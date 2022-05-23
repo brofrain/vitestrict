@@ -69,6 +69,8 @@ export default defineConfig(({ mode }) => ({
         'vue/macros',
         'vue-router',
         'vue-i18n',
+        '@vueuse/head',
+        '@vueuse/core',
         GlobalHelpersImport({ importPath: '~/helpers/_global' }),
       ],
       dts: 'src/__vite_auto-imports.d.ts',

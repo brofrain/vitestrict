@@ -46,7 +46,7 @@ There are only a few notable differences:
 
 - 📦 Components auto importing ([unplugin-vue-components](https://github.com/antfu/unplugin-vue-components)) is limited to base components only by default.
 
-- 📥 APIs auto importing ([unplugin-auto-import](https://github.com/antfu/unplugin-auto-import)) is applied to Vue, Vue Router, I18n and user-defined global helper functions by default.
+- 📥 APIs auto importing ([unplugin-auto-import](https://github.com/antfu/unplugin-auto-import)) is applied to Vue, VueUse, Vue Router, I18n and user-defined global helper functions by default.
 
 - 🗒 [Markdown Support](https://github.com/antfu/vite-plugin-md) has been fully removed.
 

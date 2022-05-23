@@ -1,5 +1,3 @@
-import { useDark } from '@vueuse/core';
-
 import type { PluginModule } from '~/types/modules';
 
 // STARTER_DOCS:

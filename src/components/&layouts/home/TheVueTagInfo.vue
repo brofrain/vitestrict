@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { useAsyncState } from '@vueuse/core';
-
 import { fetchLatestVueTag } from '~/api/rest/releases';
 
 const {

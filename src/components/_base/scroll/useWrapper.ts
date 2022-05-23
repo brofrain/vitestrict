@@ -1,9 +1,3 @@
-import {
-  useMutationObserver,
-  useResizeObserver,
-  useScroll,
-} from '@vueuse/core';
-
 export default () => {
   const wrapperEl = $ref<HTMLDivElement>();
 
