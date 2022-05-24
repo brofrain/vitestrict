@@ -1,5 +1,3 @@
-import type { ParamlessVoidFunction } from '~/types/basic';
-
 export * from './is';
 
 export const cloneDeep = <T>(value: T): T => {
@@ -8,31 +6,29 @@ export const cloneDeep = <T>(value: T): T => {
   }
 
   if (value === Object(value)) {
-    const newObj = { ...value };
-    for (const key in newObj) {
-      newObj[key] = cloneDeep(newObj[key]);
+    const newObj: Partial<T> = {};
+    for (const key in value) {
+      newObj[key] = cloneDeep(value[key]);
     }
-    return newObj;
+    return newObj as T;
   }
 
   return value;
 };
 
-const doubleRequestAnimationFrame = (callback: ParamlessVoidFunction) => {
+const doubleRequestAnimationFrame = (callback: () => void) => {
   requestAnimationFrame(() => {
     requestAnimationFrame(callback);
   });
 };
 
 // based on https://github.com/twickstrom/vue-force-next-tick
-export const forceNextTick = (
-  callback?: ParamlessVoidFunction
-): Promise<unknown> | void => {
+export const forceNextTick = (callback?: () => void): Promise<void> | void => {
   if (callback && isFn(callback)) {
     doubleRequestAnimationFrame(callback);
   } else {
     return new Promise((resolve) => {
-      doubleRequestAnimationFrame(resolve as ParamlessVoidFunction);
+      doubleRequestAnimationFrame(resolve);
     });
   }
 };
