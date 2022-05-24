@@ -52,7 +52,7 @@ rules:
   'camelcase': off
 
   'import/order':
-    - error
+    - warn
     - groups:
         - builtin
         - external
