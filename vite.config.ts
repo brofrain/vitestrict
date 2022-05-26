@@ -40,8 +40,9 @@ const PagesImportModeResolver =
   (filepath, { dirs }) => {
     // top level index.vue: `sync`, others: `async`
     for (const { baseRoute, dir } of dirs) {
-      if (baseRoute === '' && filepath.startsWith(`/${dir}/index`))
+      if (baseRoute === '' && filepath.startsWith(`/${dir}/index`)) {
         return 'sync';
+      }
     }
     return 'async';
   };

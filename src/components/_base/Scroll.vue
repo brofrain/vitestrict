@@ -118,7 +118,7 @@ const scrollHandleStyle = $computed(() => ({
             "
             :_pointer-events="isTrackScrollActive ? 'none' : 'auto'"
             @mousedown.stop="startMouseScroll"
-          ></div>
+          />
         </div>
       </div>
     </base-fade-transition>
