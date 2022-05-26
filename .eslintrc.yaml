@@ -50,6 +50,9 @@ rules:
   'no-debugger': warn
 
   'camelcase': off
+  'curly':
+    - error
+    - all
 
   'import/order':
     - warn
@@ -107,6 +110,14 @@ rules:
         - template
         - style
 
+  'vue/html-self-closing':
+    - warn
+    - html:
+        component: always
+        normal: always
+        void: always
+      svg: always
+
   # The code below is necessary for some deps to work properly.
   # Therefore, it is not recommended to modify it.
   # - Vue
@@ -127,7 +138,6 @@ rules:
 
   # - Prettier
   'prettier/prettier': warn
-  'vue/html-self-closing': off
   'vue/max-attributes-per-line': off
   'vue/singleline-html-element-content-newline': off
 
