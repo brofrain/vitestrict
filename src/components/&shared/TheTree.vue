@@ -19,7 +19,7 @@ const handleClick = () => {
     _text="secondary hover:accent"
     _transition-colors
     _cursor-pointer
-    @click="handleClick"
+    @click="handleClick()"
   />
 </template>
 

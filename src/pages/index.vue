@@ -49,12 +49,12 @@ const inputPlaceholder = $computed(() =>
       <base-input
         v-model="name"
         :placeholder="inputPlaceholder"
-        @keydown.enter="pushNameRoute"
+        @keydown.enter="pushNameRoute()"
       />
     </div>
 
     <div>
-      <base-button :disabled="!name" _m-3 @click="pushNameRoute">
+      <base-button :disabled="!name" _m-3 @click="pushNameRoute()">
         {{ t('home.button') }}
       </base-button>
     </div>
