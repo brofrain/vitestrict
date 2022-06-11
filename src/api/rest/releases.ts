@@ -6,16 +6,16 @@ interface Realease {
 
 export const fetchLatestViteTag = async () => {
   const {
-    data: { tag_name },
+    data: { tag_name: tag },
   } = await rest.get<Realease>('/repos/vitejs/vite/releases/latest');
 
-  return tag_name;
+  return tag;
 };
 
 export const fetchLatestVueTag = async () => {
   const {
-    data: { tag_name },
+    data: { tag_name: tag },
   } = await rest.get<Realease>('/repos/vuejs/core/releases/latest');
 
-  return tag_name;
+  return tag;
 };
