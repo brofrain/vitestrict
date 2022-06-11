@@ -1,15 +1,15 @@
 <script setup lang="ts">
 const { ready, start } = $(
   useTimeout(1000, { controls: true, immediate: false })
-);
+)
 
-const shake = $computed(() => !ready);
+const shake = $computed(() => !ready)
 
 const handleClick = () => {
   if (ready) {
-    start();
+    start()
   }
-};
+}
 </script>
 
 <template>

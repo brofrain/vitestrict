@@ -1,7 +1,7 @@
 <script setup lang="ts">
-const cookiesAccepted = useLocalStorage('cookies-accepted', false);
+const cookiesAccepted = useLocalStorage('cookies-accepted', false)
 
-const { t } = useI18n();
+const { t } = useI18n()
 </script>
 
 <template>

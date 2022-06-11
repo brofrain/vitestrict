@@ -1,6 +1,6 @@
-import { createI18n } from 'vue-i18n';
+import { createI18n } from 'vue-i18n'
 
-import type { PluginModule } from '~/types/modules';
+import type { PluginModule } from '~/types/modules'
 
 // STARTER_DOCS:
 // Import i18n resources
@@ -9,7 +9,7 @@ const messages = Object.fromEntries(
   Object.entries(import.meta.globEager('../../locales/*.yaml')).map(
     ([path, module]) => [path.slice(14, -5), module.default]
   )
-);
+)
 
 export const install: PluginModule = ({ app }) => {
   const i18n = createI18n({
@@ -17,7 +17,7 @@ export const install: PluginModule = ({ app }) => {
     locale: 'en',
     fallbackLocale: 'en',
     messages,
-  });
+  })
 
-  app.use(i18n);
-};
+  app.use(i18n)
+}

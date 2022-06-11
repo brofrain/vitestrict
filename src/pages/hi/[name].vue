@@ -1,19 +1,19 @@
 <script setup lang="ts">
-import { useNamesStore } from '~/stores/names';
+import { useNamesStore } from '~/stores/names'
 
-const { name } = defineProps<{ name: string }>();
+const { name } = defineProps<{ name: string }>()
 
-const router = useRouter();
+const router = useRouter()
 
-const { otherNames, pushName } = $(useNamesStore());
+const { otherNames, pushName } = $(useNamesStore())
 
-const canGoBack = $computed(() => !!router.options.history.state.back);
+const canGoBack = $computed(() => !!router.options.history.state.back)
 
 watchEffect(() => {
-  pushName(name);
-});
+  pushName(name)
+})
 
-const { t } = useI18n();
+const { t } = useI18n()
 </script>
 
 <template>

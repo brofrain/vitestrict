@@ -1,8 +1,8 @@
 const doubleRequestAnimationFrame = (callback: () => void) => {
   requestAnimationFrame(() => {
-    requestAnimationFrame(callback);
-  });
-};
+    requestAnimationFrame(callback)
+  })
+}
 
 export const forceNextTick = () =>
-  new Promise<void>(doubleRequestAnimationFrame);
+  new Promise<void>(doubleRequestAnimationFrame)

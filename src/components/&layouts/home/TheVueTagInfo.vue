@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import { fetchLatestVueTag } from '~/api/rest/releases';
+import { fetchLatestVueTag } from '~/api/rest/releases'
 
 const {
   state: tag,
   isReady,
   isLoading,
-} = useAsyncState(fetchLatestVueTag(), null);
+} = useAsyncState(fetchLatestVueTag(), null)
 
-const { t } = useI18n();
+const { t } = useI18n()
 </script>
 
 <template>

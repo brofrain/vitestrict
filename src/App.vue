@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import TheCookieBanner from '~/components/&app/TheCookieBanner.vue';
+import TheCookieBanner from '~/components/&app/TheCookieBanner.vue'
 
-import { isDark } from '~/composables/dark';
+import { isDark } from '~/composables/dark'
 
-const route = useRoute();
+const route = useRoute()
 
 // STARTER_DOCS: https://vuejs.org/guide/extras/reactivity-transform.html
 const routeTitle = $computed(() =>
   isStr(route.meta.title) || isNum(route.meta.title) ? route.meta.title : null
-);
+)
 
 // STARTER_DOCS: https://github.com/vueuse/head
 useHead({
@@ -22,7 +22,7 @@ useHead({
       content: computed(() => (isDark.value ? '#00aba9' : '#ffffff')),
     },
   ],
-});
+})
 </script>
 
 <template>

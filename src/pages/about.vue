@@ -4,21 +4,21 @@ meta:
 </route>
 
 <script setup lang="ts">
-import TheTree from '~/components/&shared/TheTree.vue';
-import Section from '~/components/about/Section.vue';
+import TheTree from '~/components/&shared/TheTree.vue'
+import Section from '~/components/about/Section.vue'
 
-const BASE_PARAGRAPH_COUNT = 3;
+const BASE_PARAGRAPH_COUNT = 3
 
-let paragraphCountModifier = $ref(0);
+let paragraphCountModifier = $ref(0)
 
 const paragraphCount = $computed({
   get: () => BASE_PARAGRAPH_COUNT + paragraphCountModifier,
   set: (v) => {
-    paragraphCountModifier = Math.max(0, v) - BASE_PARAGRAPH_COUNT;
+    paragraphCountModifier = Math.max(0, v) - BASE_PARAGRAPH_COUNT
   },
-});
+})
 
-const { t } = useI18n();
+const { t } = useI18n()
 </script>
 
 <template>

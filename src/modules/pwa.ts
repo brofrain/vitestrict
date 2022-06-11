@@ -1,13 +1,13 @@
-import type { PluginModule } from '~/types/modules';
+import type { PluginModule } from '~/types/modules'
 
 // STARTER_DOCS: https://github.com/antfu/vite-plugin-pwa
 export const install: PluginModule = async ({ isClient, router }) => {
   if (!isClient) {
-    return;
+    return
   }
 
-  await router.isReady();
+  await router.isReady()
 
-  const { registerSW } = await import('virtual:pwa-register');
-  registerSW({ immediate: true });
-};
+  const { registerSW } = await import('virtual:pwa-register')
+  registerSW({ immediate: true })
+}

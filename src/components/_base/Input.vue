@@ -1,29 +1,29 @@
 <script setup lang="ts">
-type InputType = 'number' | 'text';
+type InputType = 'number' | 'text'
 
-type InputEvent = Event & { target: { value: string } };
+type InputEvent = Event & { target: { value: string } }
 
 interface Props {
-  modelValue: string;
-  type?: InputType;
-  placeholder?: string;
+  modelValue: string
+  type?: InputType
+  placeholder?: string
 }
 
 interface Emits {
-  (e: 'update:modelValue', value: string): void;
+  (e: 'update:modelValue', value: string): void
 }
 
 const {
   type = 'text',
   placeholder = '',
   modelValue = '',
-} = defineProps<Props>();
+} = defineProps<Props>()
 
-const emit = defineEmits<Emits>();
+const emit = defineEmits<Emits>()
 
 const handleInput = (e: Event) => {
-  emit('update:modelValue', (e as InputEvent).target.value);
-};
+  emit('update:modelValue', (e as InputEvent).target.value)
+}
 </script>
 
 <template>

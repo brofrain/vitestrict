@@ -315,7 +315,7 @@ Example:
 </template>
 
 <script lang="ts" setup>
-  import SomeSubcomponent from './some-component/SomeSubcomponent.vue';
+  import SomeSubcomponent from './some-component/SomeSubcomponent.vue'
 </script>
 ```
 
