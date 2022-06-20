@@ -17,9 +17,11 @@
     "outDir": "dist",
     "paths": { "~/*": ["src/*"] },
     "removeComments": true,
+    "resolveJsonModule": true,
     "skipLibCheck": true,
     "sourceMap": false,
     "strict": true,
+    "strictNullChecks": true,
     "target": "ESNext",
     "types": [
       "vite/client",
@@ -29,5 +31,5 @@
       "vitest/globals"
     ]
   },
-  "exclude": ["cypress", "dist", "node_modules", "public"]
+  "exclude": ["coverage", "cypress", "dist", "node_modules", "public"]
 }
