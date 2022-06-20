@@ -11,7 +11,7 @@ const { t } = useI18n()
 </script>
 
 <template>
-  <div _italic _text-sm _text-center _opacity-70 _mb-2>
+  <div _italic _text-sm _text-center _op70 _mb-2>
     <base-fade-transition>
       <p v-if="isReady">
         {{ t('home.vue_tag', { tag }) }}
