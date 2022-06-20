@@ -294,32 +294,7 @@ This is pretty much what the prefixed folders contain - resources referenced in 
 For simplicity, it's best to treat the [official style guide](https://vuejs.org/style-guide/) as the most basic set of rules.\
 However, due to being a bit outdated and presenting a different solution to the file distribution problem, a few deviations are necessary.
 
-All component names should be PascalCase, except for globally-available base or built-in components.\
-Example:
-
-```html
-<template>
-  <div class="some-component">
-    <!-- locally imported component -->
-    <SomeSubcomponent />
-
-    <!-- base component -->
-    <base-button> Click me! </base-button>
-
-    <!-- Vue component -->
-    <transition> <div></div> </transition>
-
-    <!-- Vue Router component -->
-    <router-link> Click me! </router-link>
-  </div>
-</template>
-
-<script lang="ts" setup>
-  import SomeSubcomponent from './some-component/SomeSubcomponent.vue'
-</script>
-```
-
-Following the above rule, forcing component names to be multi-word is **not** necessary (~~[A - use multi-word component names](https://vuejs.org/style-guide/rules-essential.html#use-multi-word-component-names)~~) - the code will not produce any conflicts with HTML elements.
+All component names should be PascalCase - both filenames and in-template tags. Following the rule, forcing component names to be multi-word is **not** necessary (~~[A - use multi-word component names](https://vuejs.org/style-guide/rules-essential.html#use-multi-word-component-names)~~) - the code will not produce any conflicts with HTML elements.
 
 Child components or private composables should be stored in a directory named as their parent in kebab-case and adjacent to the parent (e.g. `src/components/blog/SomeSlider.vue` has its own unique buttons to change the active slide. This child button should be placed in `src/components/blog/some-slider/Button.vue`).
 
