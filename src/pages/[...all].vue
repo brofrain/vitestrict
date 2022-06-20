@@ -21,9 +21,9 @@ const { t } = useI18n()
     </div>
 
     <div _mt-5>
-      <base-button @click="router.push('/')">
+      <BaseButton @click="router.push('/')">
         {{ t('common.button.home') }}
-      </base-button>
+      </BaseButton>
     </div>
   </div>
 </template>

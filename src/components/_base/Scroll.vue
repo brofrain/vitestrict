@@ -86,7 +86,7 @@ const scrollHandleStyle = $computed(() => ({
       <slot />
     </div>
 
-    <base-fade-transition>
+    <BaseFadeTransition>
       <div
         v-show="showScroll"
         ref="scrollEl"
@@ -105,7 +105,7 @@ const scrollHandleStyle = $computed(() => ({
           _rounded-full
           _transition-colors
           :_bg="isTrackScrollActive ? 'accent-focus/75' : 'secondary/25'"
-          @mousedown.stop="startTrackScroll"
+          @mousedown.stop="(e) => startTrackScroll(e)"
         >
           <div
             :style="scrollHandleStyle"
@@ -117,11 +117,11 @@ const scrollHandleStyle = $computed(() => ({
               isMouseScrollActive ? 'accent-focus' : 'secondary hover:accent'
             "
             :_pointer-events="isTrackScrollActive ? 'none' : 'auto'"
-            @mousedown.stop="startMouseScroll"
+            @mousedown.stop="(e) => startMouseScroll(e)"
           />
         </div>
       </div>
-    </base-fade-transition>
+    </BaseFadeTransition>
   </div>
 </template>
 

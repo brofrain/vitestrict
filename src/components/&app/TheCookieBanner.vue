@@ -5,7 +5,7 @@ const { t } = useI18n()
 </script>
 
 <template>
-  <base-fade-transition appear>
+  <BaseFadeTransition appear>
     <div
       v-if="!cookiesAccepted"
       _absolute
@@ -24,5 +24,5 @@ const { t } = useI18n()
       </span>
       {{ t('cookie_bar.cookies') }}
     </div>
-  </base-fade-transition>
+  </BaseFadeTransition>
 </template>

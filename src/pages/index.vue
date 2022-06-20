@@ -33,9 +33,9 @@ const inputPlaceholder = $computed(() =>
     <TheTree _inline-block _text-5xl _mb-1 />
 
     <div>
-      <base-link to="https://github.com/brofrain/vitestrict" external>
+      <BaseLink to="https://github.com/brofrain/vitestrict" external>
         ViteStrict
-      </base-link>
+      </BaseLink>
       <p>
         <em>
           {{ t('home.description') }}
@@ -46,7 +46,7 @@ const inputPlaceholder = $computed(() =>
     <div _py-3 />
 
     <div>
-      <base-input
+      <BaseInput
         v-model="name"
         :placeholder="inputPlaceholder"
         @keydown.enter="pushNameRoute()"
@@ -54,9 +54,9 @@ const inputPlaceholder = $computed(() =>
     </div>
 
     <div>
-      <base-button :disabled="!name" _m-3 @click="pushNameRoute()">
+      <BaseButton :disabled="!name" _m-3 @click="pushNameRoute()">
         {{ t('home.button') }}
-      </base-button>
+      </BaseButton>
     </div>
   </div>
 </template>

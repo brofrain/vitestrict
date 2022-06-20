@@ -34,7 +34,7 @@ const handleClick = () => {
     _transition-colors
     _cursor-pointer
     _select-none
-    @click.prevent="handleClick"
+    @click.prevent="handleClick()"
   >
     <slot />
   </a>

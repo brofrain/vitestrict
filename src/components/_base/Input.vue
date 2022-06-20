@@ -42,6 +42,6 @@ const handleInput = (e: Event) => {
     _border="1px secondary/30"
     _outline="~ 2px offset-0 transparent hover:accent !focus:accent-focus"
     _duration-150
-    @input="handleInput"
+    @input="(e) => handleInput(e)"
   />
 </template>

@@ -21,11 +21,11 @@ const { t } = useI18n()
     <div _icon-mdi-human-greeting _inline-block _text-4xl _mb-1 />
 
     <div>
-      <base-fade-transition>
+      <BaseFadeTransition>
         <p :key="name">
           {{ t('name.hi', { name }) }}
         </p>
-      </base-fade-transition>
+      </BaseFadeTransition>
 
       <p>
         <em _text-xs _op60>{{ t('name.description') }}</em>
@@ -35,18 +35,18 @@ const { t } = useI18n()
         <span _op75>{{ t('name.aka') }}:</span>
         <ul>
           <li v-for="otherName in otherNames" :key="otherName" _block>
-            <base-link :to="`/hi/${otherName}`" replace>
+            <BaseLink :to="`/hi/${otherName}`" replace>
               {{ otherName }}
-            </base-link>
+            </BaseLink>
           </li>
         </ul>
       </div>
     </div>
 
     <div _my-6>
-      <base-button :disabled="!canGoBack" _text-sm @click="router.back()">
+      <BaseButton :disabled="!canGoBack" _text-sm @click="router.back()">
         {{ t('common.button.back') }}
-      </base-button>
+      </BaseButton>
     </div>
   </div>
 </template>

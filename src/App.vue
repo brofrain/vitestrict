@@ -27,10 +27,10 @@ useHead({
 
 <template>
   <!-- STARTER_DOCS: https://router.vuejs.org/guide/advanced/transitions.html -->
-  <router-view v-slot="{ Component }">
-    <base-fade-transition appear>
+  <RouterView v-slot="{ Component }">
+    <BaseFadeTransition appear>
       <component :is="Component" :key="route.name" />
-    </base-fade-transition>
-  </router-view>
+    </BaseFadeTransition>
+  </RouterView>
   <TheCookieBanner />
 </template>

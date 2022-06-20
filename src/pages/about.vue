@@ -31,23 +31,23 @@ const { t } = useI18n()
     <div _flex _flex-col _items-center _gap-3 _mb-5>
       <Section>
         <p>
-          <base-link to="https://github.com/brofrain/vitestrict" external>
+          <BaseLink to="https://github.com/brofrain/vitestrict" external>
             ViteStrict
-          </base-link>
+          </BaseLink>
           is an opinionated
-          <base-link to="https://vuejs.org/" external>Vue</base-link>+<base-link
+          <BaseLink to="https://vuejs.org/" external>Vue</BaseLink>+<BaseLink
             to="https://vitejs.dev/"
             external
           >
             Vite
-          </base-link>
+          </BaseLink>
           starter template for intuitive and easily-scalable development with
           projects both medium and large in mind, based on
-          <base-link to="https://github.com/antfu/vitesse" external>
+          <BaseLink to="https://github.com/antfu/vitesse" external>
             Vitesse
-          </base-link>
+          </BaseLink>
           made by
-          <base-link to="https://github.com/antfu" external> @anfu </base-link>.
+          <BaseLink to="https://github.com/antfu" external> @anfu </BaseLink>.
         </p>
         <p>
           The template enforces the use of a single pre-defined application
@@ -62,13 +62,13 @@ const { t } = useI18n()
         </p>
         <p>
           Check out the
-          <base-link to="https://github.com/brofrain/vitestrict" external>
+          <BaseLink to="https://github.com/brofrain/vitestrict" external>
             GitHub repo
-          </base-link>
+          </BaseLink>
           of this project or the original
-          <base-link to="https://github.com/antfu/vitesse" external>
+          <BaseLink to="https://github.com/antfu/vitesse" external>
             Vitesse
-          </base-link>
+          </BaseLink>
           starter template for more details.
         </p>
       </Section>
@@ -81,12 +81,12 @@ const { t } = useI18n()
         </p>
       </Section>
       <div _flex="~ col md:row" _flex-wrap _justify-center _gap-2>
-        <base-button @click="paragraphCount++">
+        <BaseButton @click="paragraphCount++">
           {{ t('about.add_paragraph') }}
-        </base-button>
-        <base-button @click="paragraphCount--">
+        </BaseButton>
+        <BaseButton @click="paragraphCount--">
           {{ t('about.remove_paragraph') }}
-        </base-button>
+        </BaseButton>
       </div>
     </div>
   </div>

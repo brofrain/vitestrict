@@ -4,7 +4,7 @@ import TheFooter from '~/components/&layouts/&shared/TheFooter.vue'
 
 <template>
   <main _p="x4 y10">
-    <router-view />
+    <RouterView />
     <TheFooter />
     <div _op50 _text-sm _text-center>[Default Layout]</div>
   </main>

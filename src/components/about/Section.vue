@@ -11,8 +11,8 @@
     _text-justify
     _bg="secondary/2"
   >
-    <base-scroll>
+    <BaseScroll>
       <slot />
-    </base-scroll>
+    </BaseScroll>
   </div>
 </template>

@@ -10,36 +10,36 @@ const toggleLocales = () => {
 
 <template>
   <nav _flex _justify-center _gap-3 _text-xl _my-4>
-    <base-link to="/" :title="t('nav.link_home')">
+    <BaseLink to="/" :title="t('nav.link_home')">
       <div _icon-carbon-tree />
-    </base-link>
+    </BaseLink>
 
-    <base-link
+    <BaseLink
       to="https://github.com/antfu/vitesse"
       external
       :title="t('nav.link_vitesse')"
     >
       <div _icon-carbon-campsite />
-    </base-link>
+    </BaseLink>
 
-    <base-link :title="t('nav.toggle_dark')" @click="toggleDark()">
+    <BaseLink :title="t('nav.toggle_dark')" @click="toggleDark()">
       <div _icon="carbon-sun dark:carbon-moon" />
-    </base-link>
+    </BaseLink>
 
-    <base-link :title="t('nav.toggle_langs')" @click="toggleLocales()">
+    <BaseLink :title="t('nav.toggle_langs')" @click="toggleLocales()">
       <div _icon-carbon-language />
-    </base-link>
+    </BaseLink>
 
-    <base-link to="/about" :title="t('nav.link_about')">
+    <BaseLink to="/about" :title="t('nav.link_about')">
       <div _icon-carbon-dicom-overlay />
-    </base-link>
+    </BaseLink>
 
-    <base-link
+    <BaseLink
       to="https://github.com/brofrain/vitestrict"
       external
       title="GitHub"
     >
       <div _icon-carbon-logo-github />
-    </base-link>
+    </BaseLink>
   </nav>
 </template>

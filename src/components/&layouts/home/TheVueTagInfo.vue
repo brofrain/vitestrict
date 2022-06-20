@@ -12,7 +12,7 @@ const { t } = useI18n()
 
 <template>
   <div _italic _text-sm _text-center _op70 _mb-2>
-    <base-fade-transition>
+    <BaseFadeTransition>
       <p v-if="isReady">
         {{ t('home.vue_tag', { tag }) }}
       </p>
@@ -22,6 +22,6 @@ const { t } = useI18n()
       <p v-else>
         {{ t('home.vue_tag_error') }}
       </p>
-    </base-fade-transition>
+    </BaseFadeTransition>
   </div>
 </template>

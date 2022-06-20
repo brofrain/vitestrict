@@ -5,7 +5,7 @@ import TheVueTagInfo from '~/components/&layouts/home/TheVueTagInfo.vue'
 
 <template>
   <main _p="x6 y10">
-    <router-view _text-center />
+    <RouterView _text-center />
     <TheFooter />
     <TheVueTagInfo />
     <div _op50 _text-sm _text-center>[Home Layout]</div>
