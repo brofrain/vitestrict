@@ -282,7 +282,11 @@ overrides:
         - error
         - never
 
-  - files: '**/stores/*.ts'
+  - files: 'src/helpers/_global.ts'
+    rules:
+      'import/no-unused-modules': off
+
+  - files: 'src/stores/*.ts'
     rules:
       'import/exports-last': off
 
