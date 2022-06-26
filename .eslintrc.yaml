@@ -52,6 +52,7 @@ rules:
   'no-console': warn
   'no-debugger': warn
   'no-undef-init': warn
+  'prefer-const': warn
 
   '@typescript-eslint/array-type':
     - warn
@@ -70,6 +71,7 @@ rules:
   '@typescript-eslint/no-invalid-void-type': error
   '@typescript-eslint/unified-signatures': error
 
+  'import/exports-last': error
   'import/order':
     - warn
     - groups:
@@ -111,6 +113,14 @@ rules:
         order: asc
         caseInsensitive: false
       newlines-between: always
+  'import/no-unused-modules':
+    - warn
+    - unusedExports: true
+      src: [src]
+      ignoreExports:
+        - '**/*.d.ts'
+        - 'src/main.ts'
+        - 'src/modules'
 
   'promise/prefer-await-to-then': error
 
@@ -195,6 +205,7 @@ rules:
   'unicorn/no-useless-undefined': off
 
   # - Vue
+  'import/default': off
   'import/no-unresolved': off
   'no-undef': off
   'unicorn/consistent-function-scoping': off
@@ -227,6 +238,14 @@ rules:
       varsIgnorePattern: ^_
       args: after-used
       argsIgnorePattern: ^_
+
+settings:
+  'import/parsers':
+    '@typescript-eslint/parser': ['.ts']
+    'vue-eslint-parser': ['.vue']
+  'import/resolver':
+    typescript:
+      project: 'tsconfig.json'
 
 overrides:
   - files: '*.vue'
@@ -262,6 +281,10 @@ overrides:
       '@typescript-eslint/return-await':
         - error
         - never
+
+  - files: '**/stores/*.ts'
+    rules:
+      'import/exports-last': off
 
   - files: 'cypress/**/*.spec.ts'
     rules:
