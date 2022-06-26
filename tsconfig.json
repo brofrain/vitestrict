@@ -12,8 +12,6 @@
     "moduleResolution": "node",
     "noImplicitOverride": true,
     "noImplicitReturns": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
     "outDir": "dist",
     "paths": { "~/*": ["src/*"] },
     "removeComments": true,
