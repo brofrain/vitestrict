@@ -42,10 +42,14 @@ plugins:
   - 'import'
   - 'n'
   - 'promise'
+  - 'prefer-arrow'
   - 'unicorn'
   - 'unused-imports'
 
 rules:
+  'arrow-body-style':
+    - warn
+    - as-needed
   'curly':
     - warn
     - all
@@ -121,6 +125,10 @@ rules:
         - '**/*.d.ts'
         - 'src/main.ts'
         - 'src/modules'
+
+  'prefer-arrow/prefer-arrow-functions':
+    - error
+    - disallowPrototype: true
 
   'promise/prefer-await-to-then': error
 
