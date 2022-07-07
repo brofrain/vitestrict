@@ -135,6 +135,7 @@ rules:
   'unicorn/catch-error-name': warn
   'unicorn/explicit-length-check': off
   'unicorn/no-null': off
+  'unicorn/no-zero-fractions': warn
   'unicorn/prevent-abbreviations': off
 
   'vue/block-lang':
