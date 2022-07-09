@@ -331,7 +331,7 @@ It is also important not to forget about including "The" prefix in components th
 │  │  └─ 🔻SomeSubcomponentSharedAcrossIndexComponents.vue
 │  ├─ 📁some-component
 │  │  ├─ 🔻SomeSubcomponentOfSomeComponent.vue
-│  │  └─ 🔹useSomeFeatureOfSomeComponent.vue
+│  │  └─ 🔹useSomeFeatureOfSomeComponent.ts
 │  ├─ 🔻SomeComponent.vue
 │  ├─ 🔻SomeOtherComponent.vue
 │  └─ 🔻TheLoneComponent.vue
