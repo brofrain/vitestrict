@@ -55,6 +55,7 @@ rules:
     - all
   'no-console': warn
   'no-debugger': warn
+  'no-empty': warn
   'no-undef-init': warn
   'prefer-const': warn
 
@@ -136,6 +137,7 @@ rules:
   'unicorn/explicit-length-check': off
   'unicorn/no-null': off
   'unicorn/no-zero-fractions': warn
+  'unicorn/prefer-array-flat-map': warn
   'unicorn/prevent-abbreviations': off
 
   'vue/block-lang':
