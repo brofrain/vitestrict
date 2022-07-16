@@ -1,6 +1,6 @@
 import { useNProgress } from '@vueuse/integrations/useNProgress'
 
-import type { PluginModule } from '~/types/modules'
+import type { InstallModule } from '~/types/modules'
 
 const { start, done } = useNProgress(null, { showSpinner: false })
 
@@ -17,7 +17,7 @@ const {
   isPending,
 } = $(useTimeoutFn(startByRouter, 0, { immediate: false }))
 
-export const install: PluginModule = ({ isClient, router }) => {
+export const install: InstallModule = ({ isClient, router }) => {
   if (isClient) {
     router.beforeEach((to, from) => {
       if (to.path !== from.path) {

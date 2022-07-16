@@ -154,6 +154,8 @@ export default defineConfig(({ mode }) => ({
 
   // STARTER_DOCS: https://vitest.dev/
   test: {
+    clearMocks: true,
+    setupFiles: 'test/setup.ts',
     globals: true,
     include: ['test/**/*.test.ts'],
     environment: 'jsdom',

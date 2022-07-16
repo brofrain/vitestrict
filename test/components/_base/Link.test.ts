@@ -2,20 +2,7 @@ import Link from '~/components/_base/Link.vue'
 
 import { mount } from '@vue/test-utils'
 
-const push = vi.fn()
-const replace = vi.fn()
-
-vi.mock('vue-router', () => ({ useRouter: () => ({ push, replace }) }))
-
 describe('Link', () => {
-  afterEach(() => {
-    vi.clearAllMocks()
-  })
-
-  afterAll(() => {
-    vi.restoreAllMocks()
-  })
-
   it('should render', () => {
     const wrapper = mount(Link, { slots: { default: 'abc' } })
     expect(wrapper.text()).toContain('abc')
@@ -32,8 +19,8 @@ describe('Link', () => {
 
     await wrapper.trigger('click')
 
-    expect(push).not.toHaveBeenCalled()
-    expect(replace).not.toHaveBeenCalled()
+    expect(wrapper.router.push).not.toHaveBeenCalled()
+    expect(wrapper.router.replace).not.toHaveBeenCalled()
     expect(openSpy).not.toHaveBeenCalled()
     expect(focusSpy).not.toHaveBeenCalled()
   })
@@ -53,8 +40,8 @@ describe('Link', () => {
 
     await wrapper.trigger('click')
 
-    expect(push).toHaveBeenCalledOnce()
-    expect(push).toHaveBeenCalledWith(to)
+    expect(wrapper.router.push).toHaveBeenCalledOnce()
+    expect(wrapper.router.push).toHaveBeenCalledWith(to)
   })
 
   it('should replace router', async () => {
@@ -62,7 +49,7 @@ describe('Link', () => {
 
     await wrapper.trigger('click')
 
-    expect(replace).toHaveBeenCalledOnce()
-    expect(replace).toHaveBeenCalledWith(to)
+    expect(wrapper.router.replace).toHaveBeenCalledOnce()
+    expect(wrapper.router.replace).toHaveBeenCalledWith(to)
   })
 })

@@ -1,17 +1,17 @@
 import { createI18n } from 'vue-i18n'
 
-import type { PluginModule } from '~/types/modules'
+import type { InstallModule } from '~/types/modules'
 
 // STARTER_DOCS:
 // Import i18n resources
 // https://vitejs.dev/guide/features.html#glob-import
 const messages = Object.fromEntries(
-  Object.entries(import.meta.globEager('../../locales/*.yaml')).map(
-    ([path, module]) => [path.slice(14, -5), module.default]
-  )
+  Object.entries(
+    import.meta.glob<{ default: any }>('../../locales/*.yaml', { eager: true })
+  ).map(([path, module]) => [path.slice(14, -5), module.default])
 )
 
-export const install: PluginModule = ({ app }) => {
+export const install: InstallModule = ({ app }) => {
   const i18n = createI18n({
     legacy: false,
     locale: 'en',

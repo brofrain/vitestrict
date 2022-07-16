@@ -1,7 +1,7 @@
-import type { PluginModule } from '~/types/modules'
+import type { InstallModule } from '~/types/modules'
 
 // STARTER_DOCS: https://github.com/antfu/vite-plugin-pwa
-export const install: PluginModule = async ({ isClient, router }) => {
+export const install: InstallModule = async ({ isClient, router }) => {
   if (!isClient) {
     return
   }

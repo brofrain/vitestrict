@@ -1,3 +1,3 @@
 import type { ViteSSGContext } from 'vite-ssg'
 
-export type PluginModule = (ctx: ViteSSGContext) => void
+export type InstallModule = (ctx: ViteSSGContext) => void

@@ -1,11 +1,11 @@
 import { createPinia } from 'pinia'
 
-import type { PluginModule } from '~/types/modules'
+import type { InstallModule } from '~/types/modules'
 
 // STARTER_DOCS:
 // Setup Pinia
 // https://pinia.vuejs.org/
-export const install: PluginModule = ({ isClient, initialState, app }) => {
+export const install: InstallModule = ({ isClient, initialState, app }) => {
   const pinia = createPinia()
 
   app.use(pinia)

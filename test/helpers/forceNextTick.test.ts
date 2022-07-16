@@ -1,8 +1,4 @@
 describe('forceNextTick', () => {
-  afterEach(() => {
-    vi.restoreAllMocks()
-  })
-
   it('should request animation frame twice', async () => {
     const requestAnimationFrameMock = vi
       .spyOn(window, 'requestAnimationFrame')
