@@ -76,7 +76,6 @@ rules:
   '@typescript-eslint/no-invalid-void-type': error
   '@typescript-eslint/unified-signatures': error
 
-  'import/exports-last': error
   'import/order':
     - warn
     - groups:
@@ -273,6 +272,8 @@ overrides:
         - warn
         - fixMixedExportsWithInlineTypeSpecifier: true
 
+      # FIXME: this feature is currently broken with Reactivity Transform (as of Vue 3.2.37), but it should be enabled in the future
+      # '@typescript-eslint/no-unnecessary-condition': error
       '@typescript-eslint/no-unnecessary-type-arguments': warn
 
       'padding-line-between-statements': off
@@ -297,9 +298,21 @@ overrides:
     rules:
       'import/no-unused-modules': off
 
-  - files: 'src/stores/*.ts'
+  - files: 'src/modules/*.ts'
     rules:
-      'import/exports-last': off
+      '@typescript-eslint/no-explicit-any': off
+
+  - files: 'shims.d.ts'
+    rules:
+      '@typescript-eslint/ban-types': off
+      '@typescript-eslint/no-explicit-any': off
+      '@typescript-eslint/padding-line-between-statements': off
+
+  - files: '*.test.ts'
+    rules:
+      '@typescript-eslint/ban-types': off
+      '@typescript-eslint/no-empty-function': off
+      '@typescript-eslint/no-explicit-any': off
 
   - files: 'cypress/**/*.spec.ts'
     rules:
@@ -313,18 +326,6 @@ overrides:
           next: import
       'require-await': error
       'no-return-await': error
-
-  - files: '*.test.ts'
-    rules:
-      '@typescript-eslint/ban-types': off
-      '@typescript-eslint/no-empty-function': off
-      '@typescript-eslint/no-explicit-any': off
-
-  - files: 'shims.d.ts'
-    rules:
-      '@typescript-eslint/ban-types': off
-      '@typescript-eslint/no-explicit-any': off
-      '@typescript-eslint/padding-line-between-statements': off
 
   - files: ['*.json', '*.json5', '*.jsonc']
     parser: 'jsonc-eslint-parser'
