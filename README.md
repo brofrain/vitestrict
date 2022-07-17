@@ -44,13 +44,15 @@ Most of the precious [Vitesse](https://github.com/antfu/vitesse) stuff is still 
 
 There are only a few notable differences:
 
-- 📦 Components auto importing ([unplugin-vue-components](https://github.com/antfu/unplugin-vue-components)) is limited to base components only by default.
+- 📦 Components auto importing ([unplugin-vue-components](https://github.com/antfu/unplugin-vue-components)) is limited to base components only.
 
-- 📥 APIs auto importing ([unplugin-auto-import](https://github.com/antfu/unplugin-auto-import)) is applied to Vue, VueUse, Vue Router, I18n and user-defined global helper functions by default.
+- 📥 APIs auto importing ([unplugin-auto-import](https://github.com/antfu/unplugin-auto-import)) is applied to Vue, VueUse, Vue Router, I18n and user-defined global helpers.
 
 - 🗒 [Markdown Support](https://github.com/antfu/vite-plugin-md) has been fully removed.
 
 - 🧹 [Prettier](https://prettier.io/) has been added to the package.
+
+- 🧪 [vue-router-mock](https://github.com/posva/vue-router-mock) has been added for more convenient mocking of router interactions.
 
 ## 🦧 Why
 
