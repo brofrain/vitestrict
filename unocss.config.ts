@@ -20,61 +20,62 @@ export default defineConfig({
   ],
 
   theme: {
-    colors: {
-      // STARTER_DOCS: https://github.com/brofrain/unocss-preset-better-nested-colors
-      primary: {
-        DEFAULT: '#f5f5f5',
-        ':dark': '#1a1a1a',
-      },
-
-      secondary: {
-        DEFAULT: 'rgba(40,40,40,.8)',
-        ':dark': 'rgba(250,250,250,.9)',
-
-        interactive: {
-          DEFAULT: '~',
-          ':dark': '~',
-          ':hover': 'accent',
-        },
-      },
-
-      accent: {
-        DEFAULT: '#42b883',
-        contrast: '#fff',
-        focus: {
-          DEFAULT: '#33a06f',
-          ':dark': '#42d392',
-        },
-
-        interactive: {
-          DEFAULT: '~',
-          ':hover': {
-            DEFAULT: 'accent-focus',
-            ':dark': 'accent-focus:dark',
-          },
-          ':disabled': {
-            DEFAULT: '#999',
-            ':dark': '#333',
-          },
-
-          contrast: {
-            DEFAULT: 'accent-contrast',
-            ':dark': '#333',
-            ':disabled': {
-              DEFAULT: '#f1f1f1',
-              ':dark': '#888',
-            },
-          },
-        },
-      },
-    },
+    colors: {},
   },
 
   presets: [
     presetWind(),
 
     // STARTER_DOCS: https://github.com/brofrain/unocss-preset-colors-with-variants
-    presetBetterNestedColors(),
+    presetBetterNestedColors({
+      colors: {
+        primary: {
+          DEFAULT: '#f5f5f5',
+          ':dark': '#1a1a1a',
+        },
+
+        secondary: {
+          DEFAULT: 'rgba(40,40,40,.8)',
+          ':dark': 'rgba(250,250,250,.9)',
+
+          interactive: {
+            DEFAULT: '~',
+            ':dark': '~',
+            ':hover': 'accent',
+          },
+        },
+
+        accent: {
+          DEFAULT: '#42b883',
+          contrast: '#fff',
+          focus: {
+            DEFAULT: '#33a06f',
+            ':dark': '#42d392',
+          },
+
+          interactive: {
+            DEFAULT: '~',
+            ':hover': {
+              DEFAULT: 'accent-focus',
+              ':dark': 'accent-focus:dark',
+            },
+            ':disabled': {
+              DEFAULT: '#999',
+              ':dark': '#333',
+            },
+
+            contrast: {
+              DEFAULT: 'accent-contrast',
+              ':dark': '#333',
+              ':disabled': {
+                DEFAULT: '#f1f1f1',
+                ':dark': '#888',
+              },
+            },
+          },
+        },
+      },
+    }),
 
     // STARTER_DOCS: https://github.com/unocss/unocss/tree/main/packages/preset-attributify
     presetAttributify({ prefix: '_', prefixedOnly: true }),
