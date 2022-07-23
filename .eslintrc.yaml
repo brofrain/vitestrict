@@ -132,6 +132,7 @@ rules:
 
   'promise/prefer-await-to-then': error
 
+  'unicorn/better-regex': warn
   'unicorn/catch-error-name': warn
   'unicorn/explicit-length-check': off
   'unicorn/no-null': off
