@@ -138,6 +138,7 @@ rules:
   'unicorn/explicit-length-check': off
   'unicorn/no-null': off
   'unicorn/no-zero-fractions': warn
+  'unicorn/numeric-separators-style': warn
   'unicorn/prefer-array-flat-map': warn
   'unicorn/prevent-abbreviations': off
 
